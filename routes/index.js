@@ -62,10 +62,7 @@ router.get('/space/:id', function(req, res, next) {
 	});
 });
 
-router.get('/sabot.js', function(req, res, next){
-	res.set('Content-Type', 'text/javascript');
-	res.render('sabot', {spaceId: req.query.spaceId});
-});
+
 
 router.get('/login', function(req, res, next) {
 	if (req.session.admin) {

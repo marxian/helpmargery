@@ -5,73 +5,74 @@
 <h1><%= title %></h1>
 <form action="/new" method="post">
 	<fieldset>
-<div class="vcenter">
-	<div class="form-item">
-		<label for="name">Name</label>
-		<input id="name" name="name" placeholder="Village Hall" />
-		<br/>
-	</div>
+		<div class="vcenter">
+			<div class="form-item">
+				<label for="name">Name</label>
+				<input id="name" name="name" placeholder="Village Hall" />
+				<br/>
+			</div>
 
-	<div class="form-item">
-		<label for="description">Description</label>
-		<textarea id="description" name="description"></textarea>
-	</div>
+			<div class="form-item">
+				<label for="description">Description</label>
+				<textarea id="description" name="description"></textarea>
+			</div>
 
-	<div class="form-item">
-		<label for="facilities">Facilites</label>
-		<select id="facilities" name="facilities" multiple="true">
-			<% facilities.forEach(function(f){ %>
-				<option value="<%= f %>"><%= f %></option>
-			<% }) %>
-		</select>
-</div>
+			<div class="form-item">
+				<label for="facilities">Facilites</label>
+				<select id="facilities" name="facilities" multiple="true">
+					<% facilities.forEach(function(f){ %>
+						<option value="<%= f %>"><%= f %></option>
+					<% }) %>
+				</select>
+			</div>
 
-	<div class="form-item">
-		<label for="address1">Address line one</label>
-		<input id="address1" name="address1" type="text"/>
-	</div>
+			<div class="form-item">
+				<label for="address1">Address line one</label>
+				<input id="address1" name="address1" type="text"/>
+			</div>
 
-	<div class="form-item">
-		<label for="address2">Address line two</label>
-		<input id="address2" name="address2" type="text"/>
-	</div>
+			<div class="form-item">
+				<label for="address2">Address line two</label>
+				<input id="address2" name="address2" type="text"/>
+			</div>
 
-	<div class="form-item">
-		<label for="county">County</label>
-		<input id="county" name="county" type="text"/>
-	</div>
+			<div class="form-item">
+				<label for="town">Town</label>
+				<input id="town" name="town" type="text"/>
+			</div>
 
-	<div class="form-item">
-		<label for="town">Town</label>
-		<input id="town" name="town" type="text"/>
-	</div>
+			<div class="form-item">
+				<label for="county">County</label>
+				<input id="county" name="county" type="text"/>
+			</div>
 
-	<div class="form-item">
-		<label for="postcode">Postcode</label>
-		<input id="postcode" name="postcode" type="text"/>
-	</div>
+			<div class="form-item">
+				<label for="postcode">Postcode</label>
+				<input id="postcode" name="postcode" type="text"/>
+			</div>
 
-	<div class="form-item">
-		<label for="hiring_model">Hiring model</label>
-		<select id="hiring_model" name="hiring_model">
-			<% hiring_models.forEach(function(m){ %>
-				<option value="<%= m %>"><%= m %></option>
-			<% }) %>
-		</select>
-	</div>
+			<div class="form-item">
+				<label for="hiring_model">Hiring model</label>
+				<select id="hiring_model" name="hiring_model">
+					<% hiring_models.forEach(function(m){ %>
+						<option value="<%= m %>"><%= m %></option>
+					<% }) %>
+				</select>
+			</div>
 
-	<div class="form-item">
-		<label for="hire_charge">Hiring charge</label>
-		<input id="hiring_charge" name="hiring_charge" placeholder="£" type="text"/><br/>
-	</div>
+			<div class="form-item">
+				<label for="hire_charge">Hiring charge</label>
+				<input id="hiring_charge" name="hiring_charge" placeholder="£" type="text"/><br/>
+			</div>
 
-	<div class="form-item">
-		<select name="hiring_granularity">
-		<% hiring_granularity.forEach(function(v){ %>
-				<option value="<%= v %>"><%= v %></option>
-			<% }) %>
-		</select>
-	</div>
+			<div class="form-item">
+				<select name="hiring_granularity">
+				<% hiring_granularity.forEach(function(v){ %>
+						<option value="<%= v %>"><%= v %></option>
+					<% }) %>
+				</select>
+			</div>
+		</div>
 	</fieldset>
 	<button type="submit" value="Save Space">Save Space</button>
 </form>
