@@ -5,7 +5,7 @@
   "scripts": {
     "start": ". ./env ; node ./bin/www",
     "lint": "jshint ./ ; jshint ./bin/*",
-    "dev": "nodemon --ignore 'public/stylesheets/style.css' --ignore 'public/stylesheets/style.css.map'"
+    "dev": "nodemon --ignore 'public/stylesheets/style.css' -e js,ejs"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -19,7 +19,6 @@
     "moment": "^2.10.6",
     "mongoose": "^4.2.6",
     "morgan": "~1.6.1",
-    "node-sass-middleware": "0.8.0",
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
