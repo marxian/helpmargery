@@ -11,9 +11,7 @@ router.use(function(req, res, next) {
 
 /* Index */
 router.get('/', function(req, res, next) {
-  res.render('index', {
-	  title: 'Help Margery',
-  });
+  res.render('index', {});
 });
 
 /* Spaces */
