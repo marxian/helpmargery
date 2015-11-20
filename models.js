@@ -24,19 +24,40 @@ var hiringGranularities = [
 
 mongoose.connect(process.env.MONGOLAB_URI);
 
+var personSchema = new Schema({
+	start: Date,
+	end: Date,
+	owner: {
+		type: Schema.Types.ObjectId,
+		ref: 'Person'
+	},
+	booker: {
+		type: Schema.Types.ObjectId,
+		ref: 'Person'
+	}
+});
+var Person = models.Person = mongoose.model('Person', personSchema);
+
 var bookingSchema = new Schema({
 	start: Date,
-	end: Date
+	end: Date,
+	owner: {
+		type: Schema.Types.ObjectId,
+		ref: 'Person'
+	},
+	booker: {
+		type: Schema.Types.ObjectId,
+		ref: 'Person'
+	}
 });
-
-models.Booking = mongoose.model('Booking', bookingSchema);
+var Booking = models.Booking = mongoose.model('Booking', bookingSchema);
 
 var spaceSchema = new Schema({
 	name: String,
 	description: String,
 	image: Buffer,
 	facilities: { type: [String], enum: facilityTypes },
-	bookings: [models.Booking],
+	bookings: [Booking],
 	address1: String,
 	address2: String,
 	county: String,
@@ -46,5 +67,4 @@ var spaceSchema = new Schema({
 	hiring_granularity: {type: String, enum: hiringGranularities},
 	hire_charge: Number
 });
-
-models.Space = mongoose.model('Space', spaceSchema);
+var Space = models.Space = mongoose.model('Space', spaceSchema);
