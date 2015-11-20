@@ -9,6 +9,16 @@ router.get('/', function(req, res, next) {
   });
 });
 
+/* Spaces */
+router.get('/spaces', function(req, res, next) {
+	models.Space.find({}, function(err, docs) {
+		var spaces = docs;
+		res.render('spaces/index', {
+			title: 'All your spaces belong to us',
+			spaces: spaces
+		});
+	});
+});
 /* Space */
 router.get('/space', function(req, res, next) {
 	res.render('space/create', { 
