@@ -9,7 +9,6 @@ mongoose.connect(process.env.MONGOLAB_URI);
 var bookingSchema = new Schema({
 	start: Date,
 	end: Date,
-
 });
 
 models.Booking = mongoose.model('Booking', bookingSchema);
@@ -18,7 +17,9 @@ var spaceSchema = new Schema({
 	name: String,
 	description: String,
 	image: Buffer,
-	bookings: [models.Booking]
+	bookings: [models.Booking],
+	features: [String],
+
 });
 
 models.Space = mongoose.model('Space', spaceSchema);
