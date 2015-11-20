@@ -2,5 +2,35 @@
 
 <h1><%= title %></h1>
 <a href="/space">Add a new Space</a>
-
-<pre><%= JSON.stringify(spaces) %></pre>
+<% _.each(spaces, function(space) { %>
+	<article>
+		<h2><%= space.name %></h2>
+		<% if(space.address1 || space.address2 || space.county || space.postcode) { %>
+			<address>
+				<ul>
+					<% if(space.address1) { %>
+						<li><%= space.address1 %></li>
+					<% } %>
+					<% if(space.address2) { %>
+						<li><%= space.address2 %></li>
+					<% } %>
+					<% if(space.county) { %>
+						<li><%= space.county %></li>
+					<% } %>
+					<% if(space.postcode) { %>
+						<li><%= space.postcode %></li>
+					<% } %>
+				</ul>
+			</address>
+		<% } %>
+		<p><%= space.description %></p>
+		<% if(_.size(space.facilities) > 0) { %>
+			<ul>
+				<% _.each(space.facilities, function(feature) { %>
+					<li><%= feature %></li>
+				<% }); %>
+			</ul>
+		<% }; %>
+		<pre><%= JSON.stringify(space) %></pre>
+	</article>
+<% }) %>
