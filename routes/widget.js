@@ -24,11 +24,21 @@ router.post('/:id/book', function(req, res, next) {
 			console.log(err);
 			next(err);
 		} else {
-			res.close(JSON.stringify(req.body));
-			// res.render('space/success', {
-			// 	title: 'stuff',
-			// 	post: space
-			// });
+			// res.end(JSON.stringify(req.body));
+			space.bookings.push(req.body);
+
+			space.save(function(err, booking) {
+				if (err) {
+					console.log(err);
+					next(err);
+				} else {
+					res.render('widget_success', {
+						title: 'stuff',
+						space: space,
+						booking: booking
+					});
+				}
+			});
 		}
 	});
 });
