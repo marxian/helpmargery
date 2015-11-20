@@ -24,7 +24,7 @@ router.post('/:id/book', function(req, res, next) {
 			console.log(err);
 			next(err);
 		} else {
-			res.close(JSON.stringify(req.body));
+			res.end(JSON.stringify(req.body));
 			// res.render('space/success', {
 			// 	title: 'stuff',
 			// 	post: space
