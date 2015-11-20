@@ -1,9 +1,32 @@
 <% layout('widget_layout') -%>
 
-<h1>DEBUG: <%= space.name %></h1>
-
-
 <div id="widget">
+
+	<!-- About -->
+	<div class="goto about">
+		<div class="top">
+			<h1><%= space.name %></h1>
+		</div>
+		<div class="vcenter">
+			<p><%- space.description -%></p>
+			<div>
+				<button data-goto="availability">Check Availability</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- Availability -->
+	<div class="goto availability hide">
+		<div class="top">
+			<button data-goto="about">&lt;</button>
+			<h1>Availability</h1>
+		</div>
+	</div>
+
+	<div class="footer">
+		Square space thing
+		<!-- <img src="logo.png" /> -->
+	</div>
 
 </div>
 
@@ -21,8 +44,8 @@
 	<button type="submit">Create booking</button>
 </form>
 
-
 <script type="text/javascript">
 	window.space = <%- JSON.stringify(space) -%>;
 </script>
+
 <script type="text/javascript" src="/javascripts/widget.js"></script>
