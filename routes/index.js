@@ -57,9 +57,6 @@ router.get('/space/:id', function(req, res, next) {
 	});
 });
 
-router.get('/sabot.js', function(req, res, next){
-	res.set('Content-Type', 'text/javascript');
-	res.render('sabot', {spaceId: req.query.spaceId});
-});
+
 
 module.exports = router;

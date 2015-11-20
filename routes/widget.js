@@ -3,6 +3,19 @@ var router = express.Router();
 
 var models = require('../models');
 
+
+router.get('/sabot.js', function(req, res, next){
+	res.set('Content-Type', 'text/javascript');
+	var spaceId = req.query.id;
+	models.Space.findOne({_id: spaceId}, function(err, space) {
+		if (err) {
+			res.send('');
+		} else {
+			res.render('sabot', {spaceId: spaceId});
+		}
+	});
+});
+
 /* GET home page. */
 router.get('/:id', function(req, res, next) {
 	models.Space.findOne({_id: req.params.id}, function(err, space) {
