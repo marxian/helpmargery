@@ -5,6 +5,7 @@
 <% _.each(spaces, function(space) { %>
 	<article>
 		<h2><%= space.name %></h2>
+		<a href="/space/<%= space._id %>">View Space</a>
 		<% if(space.address1 || space.address2 || space.county || space.postcode) { %>
 			<address>
 				<ul>
