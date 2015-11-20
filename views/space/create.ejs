@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+  	<h1><%= title %></h1>
+	<form action="/space" method="post">
+		<fieldset>
+			<label for="name">Name</label>
+			<input id="name" name="name" placeholder="Village Hall" />
+			<label for="description">Description</label>
+			<textarea id="description" name="description"></textarea>
+		</fieldset>
+		<input type="submit" value="Save Space" />
+	</form>
+  </body>
+</html>
