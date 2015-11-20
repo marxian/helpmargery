@@ -310,3 +310,26 @@ button:hover {
 .hour > div:last-child {
 	margin-right: 0
 }
+
+@media (max-width: 850px) {
+.create {
+	width: 500px;
+	}
+}
+
+@media (max-width: 550px) {
+.create {
+	width: 360px;
+}
+	.create input,
+	.create textarea,
+	.create select {
+	  float: right;
+	  width: 55%;
+	}
+
+	.create select {
+	  width: 56%;
+	}
+
+}
