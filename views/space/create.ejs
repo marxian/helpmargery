@@ -1,9 +1,9 @@
 <% layout('layout') -%>
-<div class="create wrapper">
+<div class="goto create wrapper">
 <h1><%= title %></h1>
 <form action="/space" method="post">
 	<fieldset>
-
+<div class="vcenter">
 	<div class="form-item">
 		<label for="name">Name</label>
 		<input id="name" name="name" placeholder="Village Hall" />
@@ -68,7 +68,7 @@
 
 	<div class="form-item">
 		<label for="hire_charge">Hiring charge</label>
-		<input id="hiring_charge" name="hiring_charge" type="text"/><br/>
+		<input id="hiring_charge" name="hiring_charge" placeholder="£" type="text"/><br/>
 	</div>
 
 	<div class="form-item">
@@ -79,6 +79,7 @@
 		</select>
 	</div>
 	</fieldset>
-	<input type="submit" value="Save Space" />
+	<button type="submit" value="Save Space">Save Space</button>
 </form>
+</div>
 </div>

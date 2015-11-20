@@ -101,25 +101,26 @@ img {
 	max-width: 100%;
 }
 
-label {
+.create label {
   float:left;
 }
 
-input,
-textarea {
+.create input,
+.create textarea,
+.create select {
   float: right;
+  width: 55%;
 }
 
-#facilities {
-  float:right;
-  width: 55%;
+
+.create select {
+  width: 56%;
 }
 
 .form-item {
   clear:both;
+  margin: 0.2em 0;
 }
-
-
 
 button {
 	border: 0;
@@ -140,6 +141,10 @@ button {
 
 button:hover {
 	background-color: #931b26; /* Darker red */
+}
+
+.create button {
+  margin-top: 0.5em;
 }
 
 .top {
