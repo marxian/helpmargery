@@ -6,9 +6,7 @@ format.extend(String.prototype);
 
 /* Index */
 router.get('/', function(req, res, next) {
-  res.render('index', {
-	  title: 'Help Margery',
-  });
+  res.render('index', {});
 });
 
 /* Spaces */
