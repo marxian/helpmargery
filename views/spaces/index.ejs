@@ -1,5 +1,6 @@
 <% layout('layout') -%>
 
+<div class="spaces">
 <h1><%= title %></h1>
 <a href="/space">Add a new Space</a>
 <% _.each(spaces, function(space) { %>
@@ -35,3 +36,4 @@
 		<pre><%= JSON.stringify(space) %></pre>
 	</article>
 <% }) %>
+</div>

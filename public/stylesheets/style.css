@@ -101,6 +101,13 @@ img {
 	max-width: 100%;
 }
 
+.create {
+  width: 800px;
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+}
+
 .create label {
   float:left;
 }
@@ -109,12 +116,16 @@ img {
 .create textarea,
 .create select {
   float: right;
-  width: 55%;
+  width: 40%;
+}
+
+.create img {
+  width: 160px;
 }
 
 
 .create select {
-  width: 56%;
+  width: 40.5%;
 }
 
 .form-item {
