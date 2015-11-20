@@ -28,6 +28,10 @@ body {
 		font-size: 100%;
 }
 
+p, span {
+  color: #4b595e;
+}
+
 .date-controls span {
   padding-left: 1em;
 }
@@ -43,6 +47,7 @@ h1 {
 	font-size: 3em;
 	padding: 0 1em;
   line-height: 0.9em;
+  color: #4b595e;
 }
 
 .when {
@@ -86,7 +91,7 @@ h1 {
 }
 
 .th>span {
-		border-bottom: 4px solid rgba(255, 0, 0, 0.3);
+		border-bottom: 4px solid #88c6e5;
 		padding: 0 2px 2px 0;
 		text-align: right;
 }
@@ -94,7 +99,7 @@ h1 {
 .hour>div {
 		border-top: 1px solid #eee;
 		padding: 20px 2px 2px;
-		min-height: 50px;
+		min-height: 40px;
 		position: relative;
 		/* allow ::after psuedo element absolute positioning */
 }
@@ -103,7 +108,7 @@ h1 {
 .hour>div {
 		width: 100%;
 		margin-right: 5px;
-		color: #333;
+    color: #4b595e;
 }
 /* Dates */
 
