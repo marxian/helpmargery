@@ -1,7 +1,51 @@
 <% layout('widget_layout') -%>
-<h1>DEBUG: <%= space.name %></h1>
-<div id="widget"></div>
+
+<div id="widget">
+
+	<!-- About -->
+	<div class="goto about">
+		<div class="top">
+			<h1><%= space.name %></h1>
+		</div>
+		<div class="vcenter">
+			<p><%- space.description -%></p>
+			<div>
+				<button data-goto="availability">Check Availability</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- Availability -->
+	<div class="goto availability hide">
+		<div class="top">
+			<button data-goto="about">&lt;</button>
+			<h1>Availability</h1>
+		</div>
+	</div>
+
+	<div class="footer">
+		Square space thing
+		<!-- <img src="logo.png" /> -->
+	</div>
+
+</div>
+
+<form method="POST" action="<%= space._id %>/book">
+	From: <input name="start" value="2015-12-20T00:00:00.025Z" />
+	<br>
+	To: <input name="end" value="2015-11-20T16:01:10.025Z" />
+	<br>
+	Owner name: <input name="owner[name]" value="Alison" />
+	<br>
+	Owner email: <input name="owner[email]" value="Alison@danceclassesrus.com" />
+	<br>
+	Booker: <input name="booker[name]" value="Dance classes r us" />
+
+	<button type="submit">Create booking</button>
+</form>
+
 <script type="text/javascript">
 	window.space = <%- JSON.stringify(space) -%>;
 </script>
+
 <script type="text/javascript" src="/javascripts/widget.js"></script>
