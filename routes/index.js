@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var models = require('../models');
+var format = require('string-format');
+format.extend(String.prototype);
 
 /* Index */
 router.get('/', function(req, res, next) {
@@ -36,10 +38,8 @@ router.post('/space', function(req, res, next) {
 			console.log(err);
 			next(err);
 		} else {
-			res.render('space/success', {
-				title: 'stuff',
-				post: space
-			});
+			req.flash('success', 'Your new space: {name} has been created.'.format(space));
+			res.redirect('/spaces');
 		}
 	});
 });

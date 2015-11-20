@@ -4,6 +4,10 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var _ = require('lodash');
+// this middleware allows exposing flash messages through an express session (cookies!)
+var flash = require('express-flash');
+var session = require('express-session');
 
 var routes = require('./routes/index');
 var widget = require('./routes/widget');
@@ -14,6 +18,8 @@ var app = express();
 app.engine('ejs', require('ejs-mate'));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+// inject lodash/underscore into ejs
+app.locals._ = _;
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -21,6 +27,14 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(session({
+	secret: 'm@rg3ry-rul3z',
+	// I am not sure what these do
+	// it was crying at me... i should RTFM.. but CBATRTFM
+	resave: true,
+	saveUninitialized: true
+}));
+app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
