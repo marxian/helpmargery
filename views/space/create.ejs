@@ -1,12 +1,16 @@
 <% layout('layout') -%>
+<div class="create wrapper">
 <h1><%= title %></h1>
 <form action="/space" method="post">
 	<fieldset>
+
 		<label for="name">Name</label>
 		<input id="name" name="name" placeholder="Village Hall" />
+<br/>
 		<label for="description">Description</label>
 		<textarea id="description" name="description"></textarea>
 <br/>
+
 		<label for="facilities">Facilites</label>
 		<select id="facilities" name="facilities" multiple="true">
 			<% facilities.forEach(function(f){ %>
@@ -14,6 +18,7 @@
 			<% }) %>
 		</select>
 <br/>
+
 		<label for="address1">Address line one</label>
 		<input id="address1" name="address1" type="text"/>
 
@@ -22,10 +27,10 @@
 
 		<label for="county">County</label>
 		<input id="county" name="county" type="text"/>
-
+<br/>
 		<label for="town">Town</label>
 		<input id="town" name="town" type="text"/>
-
+<br/>
 		<label for="postcode">Postcode</label>
 		<input id="postcode" name="postcode" type="text"/>
 <br/>
@@ -46,3 +51,4 @@
 	</fieldset>
 	<input type="submit" value="Save Space" />
 </form>
+</div>
