@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "lint": "jshint ./ ; jshint ./bin/*"
+    "lint": "jshint ./ ; jshint ./bin/*",
+	"dev": "nodemon ./bin/www --ignore 'public/stylesheets/style.css' --ignore 'public/stylesheets/style.css.map'"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -20,6 +21,7 @@
   },
   "devDependencies": {
     "jshint": "^2.8.0",
+    "nodemon": "^1.8.1",
     "supertest": "^1.1.0"
   }
 }
