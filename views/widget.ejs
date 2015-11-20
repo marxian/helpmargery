@@ -8,10 +8,19 @@
 			<h1><%= space.name %></h1>
 		</div>
 		<div class="vcenter">
-			<p><%- space.description -%></p>
-			<div>
-				<button data-goto="availability">Check Availability</button>
+			<p class="description"><%- space.description -%></p>
+
+			<ul class="facilities">
+				<li>Changing Rooms</li>
+				<li>Wifi</li>
+				<li>Free Parking</li>
+			</ul>
+
+			<div class="pictures">
+				<img src="http://placehold.it/370x370" alt="venue photo">
 			</div>
+
+			<button data-goto="availability">Check Availability</button>
 		</div>
 	</div>
 
