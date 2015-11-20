@@ -23,7 +23,7 @@ router.get('/spaces', function(req, res, next) {
 });
 
 /* Space */
-router.get('/space', function(req, res, next) {
+router.get('/new', function(req, res, next) {
 	res.render('space/create', {
 		title: 'Create a new Space',
 		facilities: models.Space.schema.path('facilities').options.enum,
@@ -31,8 +31,7 @@ router.get('/space', function(req, res, next) {
 		hiring_granularity: models.Space.schema.path('hiring_granularity').options.enum
 	});
 });
-
-router.post('/space', function(req, res, next) {
+router.post('/new', function(req, res, next) {
 	models.Space.create(req.body, function(err, space) {
 		if (err) {
 			console.log(err);
