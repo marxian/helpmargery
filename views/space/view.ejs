@@ -1,5 +1,5 @@
 <% layout('layout') -%>
 <h1><%= space.name %></h1>
 <p><%= space.description %></p>
-<pre><%= JSON.stringify(space) %></pre>
+<pre><%= JSON.stringify(space, null, '\t') %></pre>
 <a href="/spaces">Back to your spaces</a>
