@@ -25,30 +25,16 @@ var hiringGranularities = [
 mongoose.connect(process.env.MONGOLAB_URI);
 
 var personSchema = new Schema({
-	start: Date,
-	end: Date,
-	owner: {
-		type: Schema.Types.ObjectId,
-		ref: 'Person'
-	},
-	booker: {
-		type: Schema.Types.ObjectId,
-		ref: 'Person'
-	}
+	name: String,
+	email: String
 });
 var Person = models.Person = mongoose.model('Person', personSchema);
 
 var bookingSchema = new Schema({
 	start: Date,
 	end: Date,
-	owner: {
-		type: Schema.Types.ObjectId,
-		ref: 'Person'
-	},
-	booker: {
-		type: Schema.Types.ObjectId,
-		ref: 'Person'
-	}
+	owner: personSchema,
+	booker: personSchema
 });
 var Booking = models.Booking = mongoose.model('Booking', bookingSchema);
 
@@ -57,7 +43,7 @@ var spaceSchema = new Schema({
 	description: String,
 	image: Buffer,
 	facilities: { type: [String], enum: facilityTypes },
-	bookings: [Booking],
+	bookings: [bookingSchema],
 	address1: String,
 	address2: String,
 	county: String,
