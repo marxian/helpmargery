@@ -136,10 +136,9 @@ button:hover {
 }
 
 .vcenter {
+	flex-direction: column;
 	display: flex;
-    flex-direction: column;
-    justify-content: center;
-	height: calc(100% - 44px); /* minus footer height */
+	height: 100%;
 	overflow: auto;
 }
 
@@ -149,6 +148,7 @@ button:hover {
 
 .footer {
 	justify-content: flex-end;
+	position: relative;
 	padding: 10px;
 	background-color: #c5cacb; /* Lighter */
 }
@@ -171,35 +171,47 @@ button:hover {
 /* ----------------------------------------------- */
 
 .about ul {
-    list-style: none;
-    padding:0;
-    margin:0;
+	list-style: none;
+	padding:0;
+	margin:0;
 }
 
 .about li {
-    padding-left: 1em;
-    text-indent: -.7em;
-    color: #4b595e;
+	padding-left: 1em;
+	text-indent: -.7em;
+	color: #4b595e;
 }
 
 .about li:before {
-    content: '• ';
-    color: #88c6e5; /* or whatever color you prefer */
+	content: '• ';
+	color: #88c6e5; /* or whatever color you prefer */
 }
 
 .about .description p {
 	margin: 1em;
 }
 
+.availability-filters {
+	padding: 20px 0;
+	margin-bottom: 10px;
+	background-color: #88c6e5; /* Blue */
+}
+
+.date-controls {
+	margin-bottom: 10px;
+}
+
 .date-controls span {
 	padding-left: 1em;
 }
 
-/* Calendar 100% height */
+.date-controls button:first-of-type {
+	margin-right: 2px;
+}
 
 #calendar {
-	height: 400px;
-    overflow-y: scroll;
+	margin-bottom: 44px;
+	overflow-y: auto;
 }
 
 /* Make each week height equally distributive */
@@ -227,14 +239,13 @@ button:hover {
 	padding: 20px 2px 2px;
 	min-height: 40px;
 	position: relative;
-	/* allow ::after psuedo element absolute positioning */
 }
 
 .th > span,
 .hour > div {
 	width: 100%;
 	margin-right: 5px;
-    color: #4b595e;
+	color: #4b595e;
 }
 
 /* Dates */
