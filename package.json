@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
+    "start": ". ./env ; node ./bin/www",
     "lint": "jshint ./ ; jshint ./bin/*"
   },
   "dependencies": {

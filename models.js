@@ -1,14 +1,24 @@
 var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
-var model = mongoose.model;
 
-var models = modules.exports = {};
+var models = module.exports = {};
+
+mongoose.connect(process.env.MONGOLAB_URI);
+
+var bookingSchema = new Schema({
+	start: Date,
+	end: Date,
+
+});
+
+models.Booking = mongoose.model('Booking', bookingSchema);
 
 var spaceSchema = new Schema({
 	name: String,
 	description: String,
-	image: Buffer
+	image: Buffer,
+	bookings: []
 });
 
-models.Space = model('Space', spaceSchema);
+models.Space = mongoose.model('Space', spaceSchema);
