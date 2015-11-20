@@ -27,32 +27,6 @@ body {
 		border: 0;
 		font-size: 100%;
     color: #4b595e;
-
-}
-
-p, span {
-  color: #4b595e;
-}
-
-ul {
-    list-style: none;
-    padding:0;
-    margin:0;
-}
-
-li {
-    padding-left: 1em;
-    text-indent: -.7em;
-    color: #4b595e;
-}
-
-li:before {
-    content: "• ";
-    color: #88c6e5; /* or whatever color you prefer */
-}
-
-.date-controls span {
-  padding-left: 1em;
 }
 
 .wrapper {
@@ -69,19 +43,46 @@ h1 {
   color: #4b595e;
 }
 
-.when {
-  margin-bottom: 1em;
+
+p, span {
+  color: #4b595e;
 }
 
-.drop {
-  width: 70%;
-  margin: auto;
+.front ul {
+    list-style: none;
+    padding:0;
+    margin:0;
+}
+
+.front li {
+    padding-left: 1em;
+    text-indent: -.7em;
+    color: #4b595e;
+    font-size: 1.5em;
+}
+
+.front li:before {
+    content: "• ";
+    color: #88c6e5; /* or whatever color you prefer */
+}
+
+.front img {
+  margin: 1em 0 0 0;
 }
 
 .front button {
   width: 100%;
+  margin-top: 1em;
+  border-radius: 10px;
+  height: 3em;
+  color: #4b595e;
+  font-size: 2em;
+  background: #c5cacb;
 }
 
+.date-controls span {
+  padding-left: 1em;
+}
 
 /* Calendar 100% height */
 
