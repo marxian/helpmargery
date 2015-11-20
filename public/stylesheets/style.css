@@ -91,6 +91,26 @@ img {
 	max-width: 100;
 }
 
+label {
+  float:left;
+}
+
+input,
+textarea {
+  float: right;
+}
+
+#facilities {
+  float:right;
+  width: 55%;
+}
+
+.form-item {
+  clear:both;
+}
+
+
+
 button {
 	border: 0;
 	border-radius: 0;
