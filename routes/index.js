@@ -23,6 +23,9 @@ router.get('/spaces', function(req, res, next) {
 router.get('/space', function(req, res, next) {
 	res.render('space/create', {
 		title: 'Create a new Space',
+		facilities: models.Space.schema.path('facilities').options.enum,
+		hiring_models: models.Space.schema.path('hiring_model').options.enum,
+		hiring_granularity: models.Space.schema.path('hiring_granularity').options.enum
 	});
 });
 
