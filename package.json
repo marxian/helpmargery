@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "lint": "jshint ./ ; jshint ./bin/*"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -12,11 +13,13 @@
     "ejs": "~2.3.3",
     "express": "~4.13.1",
     "mongoose": "^4.2.6",
+    "forwarded": "^0.1.0",
     "morgan": "~1.6.1",
     "node-sass-middleware": "0.8.0",
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
+    "jshint": "^2.8.0",
     "supertest": "^1.1.0"
   }
 }
