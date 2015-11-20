@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <script type="text/javascript" src="/javascripts/iframeResizer.contentWindow.min.js"></script>
-  </head>
-  <body>
-    <h1><%= title %></h1>
-  </body>
-</html>
+<% layout('layout') -%>
+<script type="text/javascript" src="/javascripts/iframeResizer.contentWindow.min.js"></script>
+<script type="text/javascript">
+	window.space = <%- JSON.stringify(space) -%>
+</script>
+
