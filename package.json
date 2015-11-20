@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
+    "start": ". ./env ; node ./bin/www",
     "lint": "jshint ./ ; jshint ./bin/*"
   },
   "dependencies": {
@@ -14,6 +14,8 @@
     "express": "~4.13.1",
     "mongoose": "^4.2.6",
     "forwarded": "^0.1.0",
+    "moment": "^2.10.6",
+    "mongoose": "^4.2.6",
     "morgan": "~1.6.1",
     "node-sass-middleware": "0.8.0",
     "serve-favicon": "~2.3.0"
