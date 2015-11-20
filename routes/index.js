@@ -51,10 +51,16 @@ router.get('/space/:id', function(req, res, next) {
 			next(err);
 		} else {
 			res.render('space/view', {
+				title: 'this is the page for space: ' + space.name,
 				space: space
 			});
 		}
 	});
+});
+
+router.get('/sabot.js', function(req, res, next){
+	res.set('Content-Type', 'text/javascript');
+	res.render('sabot', {spaceId: req.query.spaceId});
 });
 
 module.exports = router;
