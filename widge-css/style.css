@@ -72,12 +72,16 @@ p, span {
 
 .front button {
   width: 100%;
-  margin-top: 1em;
+  margin-top: 0.5em;
   border-radius: 10px;
   height: 3em;
   color: #4b595e;
   font-size: 2em;
   background: #c5cacb;
+}
+
+.front .description p {
+  margin: 1em;
 }
 
 .date-controls span {
