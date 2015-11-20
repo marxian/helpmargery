@@ -18,4 +18,19 @@ router.get('/:id', function(req, res, next) {
 	});
 });
 
+router.post('/:id/book', function(req, res, next) {
+	models.Space.findOne({_id: req.params.id}, function(err, space) {
+		if (err) {
+			console.log(err);
+			next(err);
+		} else {
+			res.close(JSON.stringify(req.body));
+			// res.render('space/success', {
+			// 	title: 'stuff',
+			// 	post: space
+			// });
+		}
+	});
+});
+
 module.exports = router;

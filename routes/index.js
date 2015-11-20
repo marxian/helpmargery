@@ -19,6 +19,7 @@ router.get('/spaces', function(req, res, next) {
 		});
 	});
 });
+
 /* Space */
 router.get('/space', function(req, res, next) {
 	res.render('space/create', {

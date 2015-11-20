@@ -6,20 +6,28 @@ var models = module.exports = {};
 
 mongoose.connect(process.env.MONGOLAB_URI);
 
-var bookingSchema = new Schema({
+var Person = models.Person = mongoose.model('Person', new Schema({
+	name: String,
+	email: String
+}));
+
+var Booking = models.Booking = mongoose.model('Booking', new Schema({
 	start: Date,
 	end: Date,
-});
+	owner: {
+		type: Schema.Types.ObjectId,
+		ref: 'Person'
+	},
+	booker: {
+		type: Schema.Types.ObjectId,
+		ref: 'Person'
+	}
+}));
 
-models.Booking = mongoose.model('Booking', bookingSchema);
-
-var spaceSchema = new Schema({
+var Space = models.Space = mongoose.model('Space', new Schema({
 	name: String,
 	description: String,
 	image: Buffer,
-	bookings: [models.Booking],
+	bookings: [Booking],
 	features: [String],
-
-});
-
-models.Space = mongoose.model('Space', spaceSchema);
+}));
