@@ -51,6 +51,7 @@ router.get('/space/:id', function(req, res, next) {
 			next(err);
 		} else {
 			res.render('space/view', {
+				title: 'this is the page for space: ' + space.name,
 				space: space
 			});
 		}
