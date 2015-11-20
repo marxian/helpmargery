@@ -26,10 +26,29 @@ body {
 		padding: 0;
 		border: 0;
 		font-size: 100%;
+    color: #4b595e;
+
 }
 
 p, span {
   color: #4b595e;
+}
+
+ul {
+    list-style: none;
+    padding:0;
+    margin:0;
+}
+
+li {
+    padding-left: 1em;
+    text-indent: -.7em;
+    color: #4b595e;
+}
+
+li:before {
+    content: "• ";
+    color: #88c6e5; /* or whatever color you prefer */
 }
 
 .date-controls span {
@@ -57,6 +76,10 @@ h1 {
 .drop {
   width: 70%;
   margin: auto;
+}
+
+.front button {
+  width: 100%;
 }
 
 
@@ -133,6 +156,7 @@ h1 {
 .hour>div:last-child {
 		margin-right: 0
 }
+
 
 /*end cal*/
 
