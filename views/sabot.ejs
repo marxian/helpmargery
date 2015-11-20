@@ -13,7 +13,7 @@
 			element = scripts[i];
 			src = element.src;
 
-			if (src && /sabot\.js/.test(src)) {
+			if (src && /<%= spaceId %>/.test(src)) {
 				return element;
 			}
 		}
@@ -48,17 +48,12 @@
 	setTimeout(function(){
 		var tgs = getScript();
 		var iframe = document.createElement('IFRAME');
-		iframe.src = widgetPage;
-		iframe.style = "border: none;";
+		iframe.style.border = "none";
 		iframe.scrolling = "no";
-		iframe.id = 'helpmargery';
+		iframe.id = 'helpmargery-<%= spaceId %>';
+		iframe.src = widgetPage;
 
 		tgs.parentNode.insertBefore(iframe, tgs.nextSibling);
-
-		
-		iFrameResize({log:true, checkOrigin: false}, '#helpmargery');
+		iFrameResize({log:true, checkOrigin: false}, '#helpmargery-<%= spaceId %>');
 	},100);
-
-	
-	
 })();

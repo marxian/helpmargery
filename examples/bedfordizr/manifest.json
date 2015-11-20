@@ -1,0 +1,20 @@
+{
+    "name": "helpmargery - bedfords",
+    "version": "0.1",
+    "manifest_version": 2,
+    "description": "Add two helpmargey widgets to bedofrds",
+    "content_scripts": [
+        {
+            "matches": [
+                "http://www.bedfordsbar.co.uk/venuehire.html"
+            ],
+            "all_frames": true,
+            "run_at": "document_end",
+            "css": [],
+            "js": [
+            	"jquery.js",
+                "embederator.js"
+            ]
+        }
+    ]
+}
