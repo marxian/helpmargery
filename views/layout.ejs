@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-    <script type="text/javascript" src="/javascripts/thirdparty/jquery-2.1.4.min.js"></script>
-	<script type="text/javascript" src="/javascripts/thirdparty/mithril.js"></script>
-	<script type="text/javascript" src="/javascripts/thirdparty/lodash.js"></script>
-  </head>
-  <body>
-  	<pre><%= JSON.stringify(messages) %></pre>
-    <%- body -%>
-  </body>
+	<head>
+		<title><%= title %></title>
+		<link rel="stylesheet" href="/stylesheets/style.css" />
+		<script type="text/javascript" src="/javascripts/thirdparty/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="/javascripts/thirdparty/mithril.js"></script>
+		<script type="text/javascript" src="/javascripts/thirdparty/lodash.js"></script>
+	</head>
+	<body>
+		<% if(_.size(messages) > 0) { %>
+			<ul>
+				<% _.each(messages, function(message, category) { %>
+					<li class="<%= category %>"><%= message %></li>
+				<% }); %>
+			</ul>
+		<% } %>
+		<%- body -%>
+	</body>
 </html>
