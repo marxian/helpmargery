@@ -1,3 +1,10 @@
 language: node_js
 node_js:
-  - "4.2"
+- '4.2'
+deploy:
+  provider: heroku
+  api_key:
+    secure: FdER0hwtU+v4RyTKcVlzCkdTUxEt6R98ODqmIuGXXHL9nSoiKEt9XFIZS759N/HfTyN7m+INKcFkSDcbJCQg4ZoYXUxhx2/ReYEjy6gw4Ajboo3jhxOmiWRIwCbaCqhTsWAcohs9EfeGzOURZDYhxaIdOOhPT+uezaubeJNm+v2rz76nfmySXJuaAFNXpurIZ26fL47rSP+1J2O4/xWiD9ouF7kcYnaK4U362ro4sLtp9HggFcGs1/fVRrd/wtA3eNKefzeaqzcESiJSU9UgG14AX/sXjIVoRbLJc/NRyqUUVxSamiTj43zk+7lLBsahl8lV5/HM360jO1NJza0ftGOtjSGQhhywiSUYMs9L/FJBcIwG6xnWKErlzlIYo9gE0Q5psjVCD8ilGprD+9b5IMjXGsQJ5MEx5ZJYvN4GiydD8PZgCz20vP42X5JnaT7aokivgV3U0W78gvM5sjgPCEHwOd4mk/yuzL5vFGJMYQxuePLMZtLJTaC8l+63sbO/6B+YSOU1k0RF6w0pawMHcT5qWLnZG13cHToSkyji7ol71MVdbIWmO57q+ZqWwAsBKD+Kc+yjeNoLcrUj/ZBEKGc6/oSLLxW2CEzsp2/Ibomwbq4BiFvsq/ml2aZN3mxm1MBOzXRfeZjHg1BSnS+CSpeKD1LK7QaRwhtNIE6AHXE=
+  app: helpmargery
+  on:
+    repo: marxian/helpmargery
