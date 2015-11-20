@@ -8,7 +8,10 @@ var facilityTypes = [
 	'WiFi',
 	'Projector',
 	'Kitchen',
-	'Parking'
+	'Parking',
+	'Accessible Toilets',
+	'PA System',
+	'Ramp Access'
 ];
 
 var hiringModels = [
