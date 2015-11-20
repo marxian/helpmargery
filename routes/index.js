@@ -53,7 +53,7 @@ router.get('/space/:id', function(req, res, next) {
 			console.log(err);
 			next(err);
 		} else {
-			res.render('space/success', {
+			res.render('space/view', {
 				title: 'stuff',
 				post: space
 			});
