@@ -4,6 +4,11 @@ var models = require('../models');
 var format = require('string-format');
 format.extend(String.prototype);
 
+router.use(function(req, res, next) {
+	res.locals.adminUsername = req.session.admin;
+	next();
+});
+
 /* Index */
 router.get('/', function(req, res, next) {
   res.render('index', {
@@ -57,9 +62,21 @@ router.get('/space/:id', function(req, res, next) {
 	});
 });
 
-router.get('/sabot.js', function(req, res, next){
-	res.set('Content-Type', 'text/javascript');
-	res.render('sabot', {spaceId: req.query.spaceId});
+
+
+router.get('/login', function(req, res, next) {
+	if (req.session.admin) {
+		res.redirect('/spaces');
+	} else {
+		res.render('login', {
+			title: 'Login',
+		});
+	}
+});
+
+router.post('/login', function(req, res, next) {
+	req.session.admin = req.body.username;
+	res.redirect('/spaces');
 });
 
 module.exports = router;
