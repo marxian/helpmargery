@@ -18,7 +18,7 @@ var spaceSchema = new Schema({
 	name: String,
 	description: String,
 	image: Buffer,
-	bookings: []
+	bookings: [models.Booking]
 });
 
 models.Space = mongoose.model('Space', spaceSchema);
