@@ -199,6 +199,22 @@ Login screen
 	padding-bottom: 1em;
 }
 
+
+.space button {
+	width: 100%;
+	margin: 1em 0;
+}
+
+.space label {
+	text-align: left;
+	padding: 0 0 0 1em;
+}
+
+.space textarea,
+.space input {
+	width: 90%;
+}
+
 .about ul {
 	list-style: none;
 	padding:0;
@@ -445,4 +461,19 @@ img.profile {
 	max-width: 55px;
 	display: block;
 	margin: 10px auto 25px auto;
+}
+
+ul.messages {
+	width: 100%;
+	color: white;
+	padding-top: 7px;
+}
+.messages li.success {
+	padding: 10px 25px;
+	background-color: #88C6E5;
+}
+.messages .close {
+	display: inline-block;
+	float: right;
+	cursor: pointer;
 }

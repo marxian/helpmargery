@@ -31,14 +31,23 @@
 		<script type="text/javascript" src="/javascripts/thirdparty/chosen.proto.js"></script>
 	</head>
 	<body class="<%= page %>-page">
-		<h1>Welcome back <%= adminUsername || '' %></h1>
 		<% if(_.size(messages) > 0) { %>
-			<ul>
+			<ul class="messages">
 				<% _.each(messages, function(message, category) { %>
-					<li class="<%= category %>"><%= message %></li>
+					<li class="<%= category %>"><%= message %><div class="close">&#10006;</div></li>
 				<% }); %>
 			</ul>
 		<% } %>
+		<script>
+			//hide the message on click
+			$(document).ready(function() {
+				$('li .close').click(function() {
+					$(this).parent('li').hide();
+				});
+			});
+		</script>
+
+		<h1>Welcome back <%= adminUsername || '' %></h1>
 		<%- body -%>
 		<nav class="left-navigation faded-border">
 			<div class="ln-image-wrapper"><img src="/img/smallmargy.png" class="profile"></div>
