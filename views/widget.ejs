@@ -10,7 +10,7 @@
 		<div class="vcenter">
 			<% if (space.hire_charge && space.hiring_granularity)  { %>
 				<p style="margin: 0;" class="hire_charge">
-					&pound;<%= space.hire_charge %> <%= space.hiring_granularity %>
+					From &pound;<%= space.hire_charge %> <%= space.hiring_granularity %>
 				</p>
 			<% } %>
 			<div style="min-height: 300px; max-height: 320px" class="pictures">
@@ -18,7 +18,7 @@
 					<img class="widgetimg" src="data:<%= space.image.mimetype %>;base64,<%= space.image.buffer.toString('base64') -%>" alt="venue photo">
 				<% } %>
 			</div>
-			<p><%= space.owner.name %></p>
+			<p>Managed by <%= space.owner.name %></p>
 			<div class="buttons">
 				<button data-goto="description">Find out more</button>
 				<button style="margin-top: 5px;" data-goto="availability" class="availability">Check Availability</button>
@@ -65,7 +65,7 @@
 					<%= space.postcode %><br/>
 				<% } %>
 			<% } %>
-			<div style="position: absolute;" class="buttons">
+			<div class="buttons">
 				<button data-goto="availability" class="availability">Check Availability</button>
 			</div>
 		</div>

@@ -294,7 +294,7 @@ Login screen
 	padding: 0.7em;
 }
 
-.widget-page .goto.descripton {
+.widget-page .goto.description .buttons {
 	position: absolute;
     bottom: 70px;
     width: 91%;
