@@ -72,25 +72,18 @@ body {
 	-webkit-tap-highlight-color: transparent;
 }
 
-.widget-page > div {
-	display: flex;
-	flex-direction: column;
-	height: 568px;
-	max-width: 320px;
-	text-align: center;
-	line-height: 1.5;
-	background-color: #f3f4f5; /* Very light */
-}
 /* pls pls pls keep this widget-page selector */
-.widget-page > div {
+.widget-page > div#widget {
 	display: flex;
 	flex-direction: column;
-	height: 568px;
+	height: 524px;
 	max-width: 320px;
 	text-align: center;
 	line-height: 1.5;
 	background-color: #f3f4f5; /* Very light */
 }
+
+
 
 h1, h2, h3, h4, h5, h6 {
 	font-weight: bold;
@@ -151,7 +144,7 @@ label {
 }
 
 .goto {
-	height: calc(100% - 44px); /* minus footer height */
+	height: calc(100% ); /* minus footer height */
 }
 
 .vcenter {
@@ -170,6 +163,7 @@ label {
 	position: relative;
 	padding: 10px;
 	background-color: #c5cacb; /* Lighter */
+	height: 44px;
 }
 
 /* ---------------------------------------------
