@@ -18,7 +18,7 @@
 			<% } %>
 			<div style="min-height: 300px; max-height: 320px" class="pictures">
 				<% if (space.image && typeof space.image === 'object' && space.image.buffer && space.image.mimetype) { %>
-					<img src="data:<%= space.image.mimetype %>;base64,<%= space.image.buffer.toString('base64') -%>" alt="venue photo">
+					<img class="widgetimg" src="data:<%= space.image.mimetype %>;base64,<%= space.image.buffer.toString('base64') -%>" alt="venue photo">
 				<% } %>
 			</div>
 			<p><%= space.owner.name %></p>
