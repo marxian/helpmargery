@@ -1,0 +1,20 @@
+{
+    "name": "helpmargery - aylsham",
+    "version": "0.1",
+    "manifest_version": 2,
+    "description": "Add a helpmargey widget to aylsham Site",
+    "content_scripts": [
+        {
+            "matches": [
+                "http://www.emmanuelaylsham.co.uk/address.html*"
+            ],
+            "all_frames": true,
+            "run_at": "document_end",
+            "css": [],
+            "js": [
+            	"jquery.js",
+                "embederator.js"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "name": "helpmargery - trowse",
+    "version": "0.1",
+    "manifest_version": 2,
+    "description": "Add a helpmargey widget to trowse Site",
+    "content_scripts": [
+        {
+            "matches": [
+                "http://www.trowsechurch.co.uk/page/94/meeting-place/*"
+            ],
+            "all_frames": true,
+            "run_at": "document_end",
+            "css": [],
+            "js": [
+            	"jquery.js",
+                "embederator.js"
+            ]
+        }
+    ]
+}
