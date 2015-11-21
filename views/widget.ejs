@@ -13,7 +13,11 @@
 					<img width="370" height="370" src="data:<%= space.image.mimetype %>;base64,<%= space.image.buffer.toString('base64') -%>" alt="venue photo">
 				<% } %>
 			</div>
-
+			<% if (space.hire_charge && space.hiring_granularity)  { %>
+			<p class="hire_charge">
+			£<%= space.hire_charge %> <%= space.hiring_granularity %>
+			</p>
+			<% } %>
 			<div class="buttons">
 				<button data-goto="description">Description</button>
 				<button data-goto="availability" class="availability">Check Availability</button>
@@ -28,13 +32,38 @@
 			<h1>Description</h1>
 		</div>
 		<div class="vcenter" style="padding: 10px;">
-			<p class="description"><%- space.description -%></p>
+			<p class="description"><%= space.description %></p>
 
+			<% if (space.hiring_model === 'deposit') { %>
+				<p><strong>Deposit required</strong>
+			<% } %>
+			<% if (space.facilities.length) { %>
+			<h4>Facilities</h4>
 			<ul class="facilities">
-				<li>Changing Rooms</li>
-				<li>Wifi</li>
-				<li>Free Parking</li>
+				<% _.each(space.facilities, function(f) { %>
+					<li><%= f %></li>
+				<% }) %>
 			</ul>
+			<% } %>
+
+			<% if ( space.address1 || space.address2 || space.town || space.county || space.postcode) { %>
+				<h4>Address</h4>
+				<% if (space.address1) { %>
+					<%= space.address1 %><br/>
+				<% } %>
+				<% if (space.address2) { %>
+					<%= space.address2 %><br/>
+				<% } %>
+				<% if (space.town) { %>
+					<%= space.town %><br/>
+				<% } %>
+				<% if (space.county) { %>
+					<%= space.county %><br/>
+				<% } %>
+				<% if (space.postcode) { %>
+					<%= space.postcode %><br/>
+				<% } %>
+			<% } %>
 		</div>
 	</div>
 
