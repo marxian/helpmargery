@@ -16,8 +16,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -29,7 +29,7 @@ time, mark, audio, video {
 }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -308,5 +308,126 @@ label {
 
 .th > span:last-child,
 .hour > div:last-child {
-	margin-right: 0
+	margin-right: 0;
+}
+
+/* Anthony */
+/* sorry */
+body[class^="_admin_"] {
+	/* I padded this 30px more than i need to
+	 * I did this because I tried to make the content container margin: 0 auto;
+	 * but instead it just looked really broken because of my complete lack of understanding
+	 * I didnt want to mess with other code, so ye... enjoy my pixels
+	 */
+	padding-left: 80px;
+}
+.left-navigation {
+	/* sorry */
+	background-color: white;
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	overflow: hidden;
+	width: 60px;
+	/* this is that red border thing */
+    border-width: 3px;
+    border-style: solid;
+    -webkit-border-image:
+      -webkit-gradient(linear, 0 0, 0 100%, from(#931b26), to(rgba(0, 0, 0, 0))) 1 100%;
+    -webkit-border-image:
+      -webkit-linear-gradient(#931b26, rgba(0, 0, 0, 0)) 1 100%;
+    -moz-border-image:
+      -moz-linear-gradient(#931b26, rgba(0, 0, 0, 0)) 1 100%;
+    -o-border-image:
+      -o-linear-gradient(#931b26, rgba(0, 0, 0, 0)) 1 100%;
+    border-image:
+      linear-gradient(to bottom, #931b26, rgba(0, 0, 0, 0)) 1 100%;
+	/* i dont want that left one */
+	border-left: 0px;
+}
+
+@keyframes grow {
+	100% {
+		width: 150px;
+	}
+}
+@keyframes growless {
+	100% {
+		max-width: 100px;
+	}
+}
+.left-navigation:hover {
+	animation: grow 0.5s normal forwards;
+}
+.left-navigation:hover img.profile {
+	animation: growless 0.5s normal forwards;
+}
+.ln-image-wrapper {
+	height: 100px;
+}
+.left-navigation:hover .logo {
+	/* this needs animating, it appears too uqickly */
+	width: 140px;
+}
+.left-navigation li {
+	padding: 0 1em 0 0;
+	text-align: right;
+	border-bottom-style: solid;
+	border-bottom-color: #8D8D8D;
+	border-bottom-width: 1px;
+	cursor: pointer;
+	box-sizing: border-box;
+	display: flex;
+	height: 50px;
+}
+/* http://stackoverflow.com/questions/6868009 */
+.left-navigation a:link {
+	text-decoration: inherit;
+    align-self: center;
+    white-space: nowrap;
+	color: inherit;
+	cursor: auto;
+}
+.left-navigation a:visited {
+	text-decoration: inherit;
+	color: inherit;
+	cursor: auto;
+}
+.left-navigation:hover li .fa {
+	float: left;
+	width: 30px;
+}
+.left-navigation li .fa {
+	display: inline-block;
+	width: 55px;
+	text-align: center;
+}
+.left-navigation li:hover {
+	color: #931b26;
+}
+.left-navigation li span {
+	display: none;
+	/* this took me forever to find out */
+	white-space: nowrap;
+	padding-right: 5px;
+}
+.left-navigation:hover li span {
+	display: inline;
+}
+.logo {
+	opacity: 0.7;
+	background-image: url(/img/Everyday-spaces.png);
+	width: 55px;
+	height: 48px;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	margin: 0 auto;
+}
+img.profile {
+	border-radius: 50%;
+	max-width: 55px;
+	display: block;
+	margin: 10px auto 25px auto;
 }
