@@ -49,16 +49,16 @@ var bookedSegments = [];
 	</table>
 </div>
 
-<div id="calendar">
-	<div class="th">
-		<span class="time">&nbsp;</span>
-		<% _.each(days, function( day ) { %>
-			<span class="<%= day.dayStr.toLowerCase() %>"
-				data-day="<%= day.dayStr.toLowerCase() %>">
-					<%= day.dayStr.toLowerCase() %>
-			</span>
-		<% }); %>
-	</div>
+<div class="calendar-thing th">
+	<span class="time">&nbsp;</span>
+	<% _.each(days, function( day ) { %>
+		<span class="<%= day.dayStr.toLowerCase() %>"
+			data-day="<%= day.dayStr.toLowerCase() %>">
+				<%= day.dayStr.toLowerCase() %>
+		</span>
+	<% }); %>
+</div>
+<div id="calendar" class="calendar-thing">
 
 	<div id="weeks">
 

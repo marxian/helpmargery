@@ -1,7 +1,7 @@
 (function($) {
 	$(document).on('ready', function() {
 
-		var $calendar = $('#calendar');
+		var $calendar = $('.calendar-thing');
 
 		// Update availability calendar when filters are applied
 		// $('.availability-filters :input').on('change', function() {

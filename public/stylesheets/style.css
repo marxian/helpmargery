@@ -81,6 +81,7 @@ body {
 	text-align: center;
 	line-height: 1.5;
 	background-color: #f3f4f5; /* Very light */
+	border-radius: 10px;
 }
 
 
@@ -272,6 +273,32 @@ Login screen
 	margin: 0.5em 0 0 1em;
 	padding: 0.7em;
 	width: 52%;
+}
+
+
+.widget-page .goto.book input,
+.widget-page .goto.book textarea,
+.widget-page .goto.book select {
+	border-radius: 5px;
+	background: #c5cacb;
+	margin: 0.5em 0 0 1em;
+	padding: 0.7em;
+}
+
+.goto.book form {
+	display: flex;
+}
+.goto.book .buttons {
+
+}
+
+.widget-page .top {
+	border-radius: 10px 10px 0 0;
+}
+
+.widget-page .footer,
+.widget-page .footer a {
+	border-radius: 0 0 10px 10px;
 }
 
 textarea, input, select {
