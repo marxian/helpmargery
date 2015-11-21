@@ -1,4 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Maven+Pro);
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Maven+Pro:400,500);
 
 /* ---------------------------------------------
 
@@ -15,8 +16,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -28,14 +29,13 @@ time, mark, audio, video {
 }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
+article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 
 body {
 	line-height: 1;
-  font-family: 'Maven Pro', sans-serif;
 }
 
 ol, ul {
@@ -101,38 +101,6 @@ img {
 	max-width: 100%;
 }
 
-.create {
-  width: 800px;
-  max-width: 800px;
-  margin: 2em auto;
-  background: #fff;
-}
-
-.create label {
-  float:left;
-}
-
-.create input,
-.create textarea,
-.create select {
-  float: right;
-  width: 40%;
-}
-
-.create img {
-  width: 160px;
-}
-
-
-.create select {
-  width: 40.5%;
-}
-
-.form-item {
-  clear:both;
-  margin: 0.2em 0;
-}
-
 button {
 	border: 0;
 	border-radius: 0;
@@ -154,10 +122,8 @@ button:hover {
 	background-color: #931b26; /* Darker red */
 }
 
-.create button {
-  margin: 0.5em 0 1em 0;
-  border-radius: 6px;
-  width: 100%;
+label {
+	display: block;
 }
 
 .top {
@@ -252,6 +218,14 @@ button:hover {
 	overflow-y: auto;
 }
 
+#calendar .booked {
+	background-color: #c02332; /* Red */
+}
+
+#calendar a:hover {
+	background-color: #c5cacb; /* Light */
+}
+
 /* Make each week height equally distributive */
 
 #weeks {
@@ -268,68 +242,52 @@ button:hover {
 
 .th > span {
 	border-bottom: 4px solid #88c6e5;
-	padding: 0 2px 2px 0;
-	text-align: right;
+	padding-bottom: 2px;
 }
 
 .hour > div {
+	display: flex;
 	border-top: 1px solid #eee;
-	padding: 20px 2px 2px;
-	min-height: 40px;
+	min-height: 35px;
 	position: relative;
 }
 
 .th > span,
 .hour > div {
 	width: 100%;
-	margin-right: 5px;
+	margin-right: 1px;
 	color: #4b595e;
+}
+
+.hour > div > * {
+	width: 100%;
 }
 
 /* Dates */
 
 .hour > div::after {
-	content: attr(data-date);
 	display: block;
 	position: absolute;
 	top: 0;
 	right: 2px;
 	color: #999;
+	min-width: 50px;
+}
+
+.th > span:first-child,
+.hour > span:first-child,
+.hour > div:first-child {
+	flex: 1 0 50px;
 }
 
 /* Weekends */
 
 .th > span:first-child,
-.th > span:last-child,
-.hour > div:first-child,
-.hour > div:last-child {
+.th > span:last-child {
 	background: #f3f3f3
 }
 
 .th > span:last-child,
 .hour > div:last-child {
 	margin-right: 0
-}
-
-@media (max-width: 850px) {
-.create {
-	width: 500px;
-	}
-}
-
-@media (max-width: 550px) {
-.create {
-	width: 360px;
-}
-	.create input,
-	.create textarea,
-	.create select {
-	  float: right;
-	  width: 55%;
-	}
-
-	.create select {
-	  width: 56%;
-	}
-
 }
