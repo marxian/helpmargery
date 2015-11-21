@@ -1,100 +1,111 @@
 <% layout('admin_layout') -%>
+<div class="create-header">
+	<h1><%= title %></h1>
+	<p>Here you can manage your space check your messages and view all bookings</p>
+</div>
 <% _.each(spaces, function(space) { %>
-	<div class="create-header">
+<div class="admin-item" style="padding: 30px; border: 1px solid black">
+	<h2><%= space.name %></h2>
+	<form action="/admin/edit/<%= space.id %>" method="post" enctype="multipart/form-data" style="float: left;">
+		<div class="space">
 
-		<h1><%= title %></h1>
-		<p>Here you can manage your space check your messages and view all bookings</p>
-	</div>
-		<form action="/admin/edit/<%= space.id %>" method="post" enctype="multipart/form-data" style="float: left;">
-			<div class="space">
-
-			<fieldset>
-				<div class="vcenter">
-					<div class="form-item">
-						<label for="name">Name</label>
-						<input id="name" name="name" placeholder="" value="<%= space.name || '' %>" />
-						<br/>
-					</div>
-
-					<div class="form-item">
-						<label for="description">Description</label>
-						<textarea id="description" name="description"><%= space.description || '' %></textarea>
-					</div>
-
-					<div class="form-item form-facilities">
-						<select id="facilities" data-placeholder="Select the facilities available" name="facilities" multiple="true">
-							<% facilities.forEach(function(f){ %>
-							<option value="<%= f %>" <%= _.contains(space.facilities, f) ? 'selected' : '' %>><%= f %></option>
-							<% }) %>
-						</select>
-					</div>
-					<!-- Sorry -->
-					<script>
-						$(document).ready(function() {
-							$('#facilities').chosen({width: "345px"});
-						});
-					</script>
-
-					<div class="form-item">
-						<label for="address1">Address line one</label>
-						<input id="address1" name="address1" type="text"value="<%= space.address1 || '' %>" />
-					</div>
-
-					<div class="form-item">
-						<label for="address2">Address line two</label>
-						<input id="address2" name="address2" type="text" value="<%= space.address2 || '' %>"/>
-					</div>
-
-					<div class="form-item">
-						<label for="town">Town</label>
-						<input id="town" name="town" type="text" value="<%= space.town || '' %>"/>
-					</div>
-
-					<div class="form-item">
-						<label for="county">County</label>
-						<input id="county" name="county" type="text"value="<%= space.county || '' %>" />
-					</div>
-
-					<div class="form-item">
-						<label for="postcode">Postcode</label>
-						<input id="postcode" name="postcode" type="text" value="<%= space.postcode || '' %>"/>
-					</div>
-
-					<div class="form-item">
-						<label for="hiring_model">Hiring model</label>
-						<select id="hiring_model" name="hiring_model">
-							<% hiring_models.forEach(function(m){ %>
-								<option value="<%= m %>" <%= (m === space.hiring_model) ? 'selected' : '' %>><%= m %></option>
-							<% }) %>
-						</select>
-					</div>
-
-					<div class="form-item image-form-item">
-						<label for="image">Display image</label>
-						<input type="file" name="image" id="image" />
-						<br />
-						<% if (space.image && typeof space.image === 'object' && space.image.buffer && space.image.mimetype) { %>
-							<img width="200" height="200" title="current image" src="data:<%= space.image.mimetype %>;base64,<%= space.image.buffer.toString('base64') -%>" />
-						<% } %>
-					</div>
-
-					<div class="form-item">
-						<label for="hire_charge">Hiring charge</label>
-						<input id="hire_charge" name="hire_charge" placeholder="£" type="text" value="<%= space.hire_charge || '' %>"/><br/>
-					</div>
-
-					<div class="form-item">
-						<select name="hiring_granularity">
-							<% hiring_granularity.forEach(function(v){ %>
-								<option value="<%= v %>" <%= (v === space.hiring_granularity) ? 'selected' : '' %>><%= v %></option>
-							<% }) %>
-						</select>
-					</div>
+		<fieldset>
+			<div class="vcenter">
+				<div class="form-item">
+					<label for="name">Name</label>
+					<input id="name" name="name" placeholder="" value="<%= space.name || '' %>" />
+					<br/>
 				</div>
-				<input type="hidden" name="owner[name]" value="<%= adminUsername %>" />
-				<input type="hidden" name="owner[email]" value="<%= adminUsername %>@everydayspaces.co.uk" />
-			</fieldset>
-			<div class="embed-widget">
+
+				<div class="form-item">
+					<label for="description">Description</label>
+					<textarea id="description" name="description"><%= space.description || '' %></textarea>
+				</div>
+
+				<div class="form-item form-facilities">
+					<select id="facilities" data-placeholder="Select the facilities available" name="facilities" multiple="true">
+						<% facilities.forEach(function(f){ %>
+						<option value="<%= f %>" <%= _.contains(space.facilities, f) ? 'selected' : '' %>><%= f %></option>
+						<% }) %>
+					</select>
+				</div>
+				<!-- Sorry -->
+				<script>
+					$(document).ready(function() {
+						$('#facilities').chosen({width: "345px"});
+					});
+				</script>
+
+				<div class="form-item">
+					<label for="address1">Address line one</label>
+					<input id="address1" name="address1" type="text"value="<%= space.address1 || '' %>" />
+				</div>
+
+				<div class="form-item">
+					<label for="address2">Address line two</label>
+					<input id="address2" name="address2" type="text" value="<%= space.address2 || '' %>"/>
+				</div>
+
+				<div class="form-item">
+					<label for="town">Town</label>
+					<input id="town" name="town" type="text" value="<%= space.town || '' %>"/>
+				</div>
+
+				<div class="form-item">
+					<label for="county">County</label>
+					<input id="county" name="county" type="text"value="<%= space.county || '' %>" />
+				</div>
+
+				<div class="form-item">
+					<label for="postcode">Postcode</label>
+					<input id="postcode" name="postcode" type="text" value="<%= space.postcode || '' %>"/>
+				</div>
+
+				<div class="form-item">
+					<label for="hiring_model">Hiring model</label>
+					<select id="hiring_model" name="hiring_model">
+						<% hiring_models.forEach(function(m){ %>
+							<option value="<%= m %>" <%= (m === space.hiring_model) ? 'selected' : '' %>><%= m %></option>
+						<% }) %>
+					</select>
+				</div>
+
+				<div class="form-item image-form-item">
+					<label for="image">Display image</label>
+					<input type="file" name="image" id="image" />
+					<br />
+					<% if (space.image && typeof space.image === 'object' && space.image.buffer && space.image.mimetype) { %>
+						<img width="200" height="200" title="current image" src="data:<%= space.image.mimetype %>;base64,<%= space.image.buffer.toString('base64') -%>" />
+					<% } %>
+				</div>
+
+				<div class="form-item">
+					<label for="hire_charge">Hiring charge</label>
+					<input id="hire_charge" name="hire_charge" placeholder="£" type="text" value="<%= space.hire_charge || '' %>"/><br/>
+				</div>
+
+				<div class="form-item">
+					<select name="hiring_granularity">
+						<% hiring_granularity.forEach(function(v){ %>
+							<option value="<%= v %>" <%= (v === space.hiring_granularity) ? 'selected' : '' %>><%= v %></option>
+						<% }) %>
+					</select>
+				</div>
+			</div>
+			<input type="hidden" name="owner[name]" value="<%= adminUsername %>" />
+			<input type="hidden" name="owner[email]" value="<%= adminUsername %>@everydayspaces.co.uk" />
+		</fieldset>
+		
+		<button type="submit" value="Save">Save</button>
+		</div>
+	</form>
+
+	<div style="float: left; width: 400px; padding-left: 50px;" class="widget">
+		<script
+		type="text/javascript"
+		src="/widget/sabot.js?spaceId=<%= space.id %>"
+		async="true"></script>
+		<div class="embed-widget">
 			<p>Embed your widget</p>
 			<p>Paste the below code into your website</p>
 			<pre><code class="html">&#x3C;script type=&#x22;text/javascript&#x22; src=&#x22;http://everydayspaces.co.uk/widget/sabot.js?spaceId=<%= space.id %> async=&#x22;true&#x22;&#x3E;&#x3C;/script&#x3E;</code></pre>
@@ -104,16 +115,8 @@
 				});
 			});</script>
 		</div>
-			<button type="submit" value="Save">Save</button>
-		</form>
-
- 		<div style="float: left;" class="widget <%= _.map(space.facilities, function(f){ return f.replace(' ', '_'); }).join(' ') %>">
-
-	 		<script
-				type="text/javascript"
-				src="/widget/sabot.js?spaceId=<%= space.id %>"
-				async="true"></script>
-		</div>
-		<div style="clear: left;"/>
- 	<% }) %>
+	</div>
+	<div style="clear: left;"></div>
 </div>
+
+ <% }) %>
