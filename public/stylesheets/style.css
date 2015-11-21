@@ -126,7 +126,6 @@ button:hover {
 }
 
 button.availability {
-	margin-top: 5px;
 	padding: 20px 12px;
 }
 
@@ -320,7 +319,7 @@ textarea, input, select {
 }
 
 .buttons {
-	padding: 0 5px;
+	padding: 5px 5px;
 }
 
 .buttons button {
@@ -544,5 +543,5 @@ ul.messages {
 }
 
 .form-item.form-facilities {
-	margin: 15px 0;		
+	margin: 15px 0;
 }

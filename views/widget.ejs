@@ -8,9 +8,12 @@
 			<h1><%= space.name %></h1>
 		</div>
 		<div class="vcenter">
-			<div class="pictures">
+			<div class="buttons">
+				<button data-goto="description">Description</button>
+			</div>
+			<div style="min-height: 335px;" class="pictures">
 				<% if (space.image && typeof space.image === 'object' && space.image.buffer && space.image.mimetype) { %>
-					<img width="370" height="370" src="data:<%= space.image.mimetype %>;base64,<%= space.image.buffer.toString('base64') -%>" alt="venue photo">
+					<img src="data:<%= space.image.mimetype %>;base64,<%= space.image.buffer.toString('base64') -%>" alt="venue photo">
 				<% } %>
 			</div>
 			<% if (space.hire_charge && space.hiring_granularity)  { %>
@@ -19,7 +22,6 @@
 			</p>
 			<% } %>
 			<div class="buttons">
-				<button data-goto="description">Description</button>
 				<button data-goto="availability" class="availability">Check Availability</button>
 			</div>
 		</div>
@@ -105,7 +107,7 @@
 		</div>
 	</div>
 
-	
+
 
 </div>
 <% if (!unbranded) { %>
