@@ -1,4 +1,4 @@
-<% layout('layout') -%>
+<% layout('home_layout') -%>
 <script src="/javascripts/thirdparty/isotope.pkgd.min.js"></script>
 <style>
 	.grid-item { width: 25%; }
@@ -100,7 +100,6 @@
 <div class="grid">
 	<% _.each(spaces, function(space) { %>
  		<div class="grid-item <%= _.map(space.facilities, function(f){ return f.replace(' ', '_'); }).join(' ') %>">
- 			<h2><a href="/edit/<%= space._id %>">Edit Space</a></h2>
 	 		<script
 				type="text/javascript"
 				src="/widget/sabot.js?spaceId=<%= space.id %>"
@@ -108,8 +107,6 @@
 		</div>
  	<% }) %>
 </div>
-
-<a href="/new">Add a new Space</a>
 <script>
 	var $grid = $('.grid').isotope({
 		itemSelector: '.grid-item',

@@ -1,0 +1,19 @@
+<% layout('layout') -%>
+<h1><%= title %></h1>
+
+<div class="space">
+	<% _.each(spaces, function(space) { %>
+		<div class="form">
+		<h2><a href="/admin/edit/<%= space._id %>">Edit Space</a></h2>
+		</div>
+ 		<div class="widget <%= _.map(space.facilities, function(f){ return f.replace(' ', '_'); }).join(' ') %>">
+ 			
+	 		<script
+				type="text/javascript"
+				src="/widget/sabot.js?spaceId=<%= space.id %>"
+				async="true"></script>
+		</div>
+ 	<% }) %>
+</div>
+
+<a href="/admin/new">Add a new Space</a>
