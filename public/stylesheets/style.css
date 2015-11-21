@@ -214,6 +214,14 @@ button:hover {
 	overflow-y: auto;
 }
 
+#calendar .booked {
+	background-color: #c02332; /* Red */
+}
+
+#calendar a:hover {
+	background-color: #c5cacb; /* Light */
+}
+
 /* Make each week height equally distributive */
 
 #weeks {
@@ -235,36 +243,44 @@ button:hover {
 }
 
 .hour > div {
+	display: flex;
 	border-top: 1px solid #eee;
-	padding: 20px 2px 2px;
-	min-height: 40px;
+	min-height: 35px;
 	position: relative;
 }
 
 .th > span,
 .hour > div {
 	width: 100%;
-	margin-right: 5px;
+	margin-right: 1px;
 	color: #4b595e;
+}
+
+.hour > div > * {
+	width: 100%;
 }
 
 /* Dates */
 
 .hour > div::after {
-	content: attr(data-date);
 	display: block;
 	position: absolute;
 	top: 0;
 	right: 2px;
 	color: #999;
+	min-width: 50px;
+}
+
+.th > span:first-child,
+.hour > span:first-child,
+.hour > div:first-child {
+	flex: 1 0 50px;
 }
 
 /* Weekends */
 
 .th > span:first-child,
-.th > span:last-child,
-.hour > div:first-child,
-.hour > div:last-child {
+.th > span:last-child {
 	background: #f3f3f3
 }
 

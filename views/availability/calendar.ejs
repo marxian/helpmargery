@@ -1,185 +1,49 @@
+<%
+
+var days = moment.weekdaysShort();
+var hours = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
+
+var currentWeek = moment().weekday(0);
+var currentMonth = moment().format('MMMM');
+
+
+
+//var months = moment().months();
+//var years = range(moment().subtract('5', 'years'), moment().add('5', 'years'));
+
+%>
+
 <div class="date-controls">
 	<table>
 		<td>
-		<tr><button>&lt;</button></tr>
-		<tr><button>&gt;</button></tr>
-		<tr><span>16 - 22 November</span></tr>
+		<tr><button class="week-prev">&lt;</button></tr>
+		<tr><button class="week-next">&gt;</button></tr>
+		<tr><span><%= currentWeek.format('DD') %> &mdash; <%= currentWeek.add('7', 'days').format('DD') %> <%= currentMonth %></span></tr>
 		</td>
 	</table>
 </div>
 
 <div id="calendar">
 	<div class="th">
-		<span>&nbsp;</span>
-		<span data-day="mon">Mon</span>
-		<span data-day="tue">Tues</span>
-		<span data-day="wed">Weds</span>
-		<span data-day="thus">Thur</span>
-		<span data-day="fri">Fri</span>
-		<span data-day="sat">Sat</span>
-		<span data-day="sun">Sun</span>
+		<span class="time">&nbsp;</span>
+		<% _.each(days, function( day ) { %>
+			<span class="<%= day.toLowerCase() %>" data-day="<%= day.toLowerCase() %>"><%= day.toLowerCase() %></span>
+		<% }); %>
 	</div>
 
 	<div id="weeks">
-		<div class="hour">
-			<div class="time" data-date="9am"></div>
-			<div class="mon" data-day="mon" data-date=""></div>
-			<div class="tue" data-day="tue" data-date=""></div>
-			<div class="wed" data-day="wed" data-date=""></div>
-			<div class="thur" data-day="thur" data-date=""></div>
-			<div class="fri" data-day="fri" data-date=""></div>
-			<div class="sat" data-day="sat" data-date=""></div>
-			<div class="sun" data-day="sun" data-date=""></div>
-		</div>
-		<div class="hour">
-			<div class="time" data-date="10am"></div>
-			<div class="mon" data-day="mon" data-date=""></div>
-			<div class="tue" data-day="tue" data-date=""></div>
-			<div class="wed" data-day="wed" data-date=""></div>
-			<div class="thur" data-day="thur" data-date=""></div>
-			<div class="fri" data-day="fri" data-date=""></div>
-			<div class="sat" data-day="sat" data-date=""></div>
-			<div class="sun" data-day="sun" data-date=""></div>
-		</div>
-		<div class="hour">
-			<div class="time" data-date="11am"></div>
-			<div class="mon" data-day="mon" data-date=""></div>
-			<div class="tue" data-day="tue" data-date=""></div>
-			<div class="wed" data-day="wed" data-date=""></div>
-			<div class="thur" data-day="thur" data-date=""></div>
-			<div class="fri" data-day="fri" data-date=""></div>
-			<div class="sat" data-day="sat" data-date=""></div>
-			<div class="sun" data-day="sun" data-date=""></div>
-		</div>
-		<div class="hour">
-			<div class="time" data-date="12pm"></div>
-			<div class="mon" data-day="mon" data-date=""></div>
-			<div class="tue" data-day="tue" data-date=""></div>
-			<div class="wed" data-day="wed" data-date=""></div>
-			<div class="thur" data-day="thur" data-date=""></div>
-			<div class="fri" data-day="fri" data-date=""></div>
-			<div class="sat" data-day="sat" data-date=""></div>
-			<div class="sun" data-day="sun" data-date=""></div>
-		</div>
-		<div class="hour">
-			<div class="time" data-date="1pm"></div>
-			<div class="mon" data-day="mon" data-date=""></div>
-			<div class="tue" data-day="tue" data-date=""></div>
-			<div class="wed" data-day="wed" data-date=""></div>
-			<div class="thur" data-day="thur" data-date=""></div>
-			<div class="fri" data-day="fri" data-date=""></div>
-			<div class="sat" data-day="sat" data-date=""></div>
-			<div class="sun" data-day="sun" data-date=""></div>
-		</div>
-		<div class="hour">
-			<div class="time" data-date="2pm"></div>
-			<div class="mon" data-day="mon" data-date=""></div>
-			<div class="tue" data-day="tue" data-date=""></div>
-			<div class="wed" data-day="wed" data-date=""></div>
-			<div class="thur" data-day="thur" data-date=""></div>
-			<div class="fri" data-day="fri" data-date=""></div>
-			<div class="sat" data-day="sat" data-date=""></div>
-			<div class="sun" data-day="sun" data-date=""></div>
-		</div>
-		<div class="hour">
-			<div class="time" data-date="3pm"></div>
-			<div class="mon" data-day="mon" data-date=""></div>
-			<div class="tue" data-day="tue" data-date=""></div>
-			<div class="wed" data-day="wed" data-date=""></div>
-			<div class="thur" data-day="thur" data-date=""></div>
-			<div class="fri" data-day="fri" data-date=""></div>
-			<div class="sat" data-day="sat" data-date=""></div>
-			<div class="sun" data-day="sun" data-date=""></div>
-		</div>
-		<div class="hour">
-			<div class="time" data-date="4pm"></div>
-			<div class="mon" data-day="mon" data-date=""></div>
-			<div class="tue" data-day="tue" data-date=""></div>
-			<div class="wed" data-day="wed" data-date=""></div>
-			<div class="thur" data-day="thur" data-date=""></div>
-			<div class="fri" data-day="fri" data-date=""></div>
-			<div class="sat" data-day="sat" data-date=""></div>
-			<div class="sun" data-day="sun" data-date=""></div>
-		</div>
-		<div class="hour">
-			<div class="time" data-date="5pm"></div>
-			<div class="mon" data-day="mon" data-date=""></div>
-			<div class="tue" data-day="tue" data-date=""></div>
-			<div class="wed" data-day="wed" data-date=""></div>
-			<div class="thur" data-day="thur" data-date=""></div>
-			<div class="fri" data-day="fri" data-date=""></div>
-			<div class="sat" data-day="sat" data-date=""></div>
-			<div class="sun" data-day="sun" data-date=""></div>
-		</div>
-		<div class="hour">
-			<div class="time" data-date="6pm"></div>
-			<div class="mon" data-day="mon" data-date=""></div>
-			<div class="tue" data-day="tue" data-date=""></div>
-			<div class="wed" data-day="wed" data-date=""></div>
-			<div class="thur" data-day="thur" data-date=""></div>
-			<div class="fri" data-day="fri" data-date=""></div>
-			<div class="sat" data-day="sat" data-date=""></div>
-			<div class="sun" data-day="sun" data-date=""></div>
-		</div>
-		<div class="hour">
-			<div class="time" data-date="7pm"></div>
-			<div class="mon" data-day="mon" data-date=""></div>
-			<div class="tue" data-day="tue" data-date=""></div>
-			<div class="wed" data-day="wed" data-date=""></div>
-			<div class="thur" data-day="thur" data-date=""></div>
-			<div class="fri" data-day="fri" data-date=""></div>
-			<div class="sat" data-day="sat" data-date=""></div>
-			<div class="sun" data-day="sun" data-date=""></div>
-		</div>
-		<div class="hour">
-			<div class="time" data-date="8pm"></div>
-			<div class="mon" data-day="mon" data-date=""></div>
-			<div class="tue" data-day="tue" data-date=""></div>
-			<div class="wed" data-day="wed" data-date=""></div>
-			<div class="thur" data-day="thur" data-date=""></div>
-			<div class="fri" data-day="fri" data-date=""></div>
-			<div class="sat" data-day="sat" data-date=""></div>
-			<div class="sun" data-day="sun" data-date=""></div>
-		</div>
-		<div class="hour">
-			<div class="time" data-date="9pm"></div>
-			<div class="mon" data-day="mon" data-date=""></div>
-			<div class="tue" data-day="tue" data-date=""></div>
-			<div class="wed" data-day="wed" data-date=""></div>
-			<div class="thur" data-day="thur" data-date=""></div>
-			<div class="fri" data-day="fri" data-date=""></div>
-			<div class="sat" data-day="sat" data-date=""></div>
-			<div class="sun" data-day="sun" data-date=""></div>
-		</div>
-		<div class="hour">
-			<div class="time" data-date="10pm"></div>
-			<div class="mon" data-day="mon" data-date=""></div>
-			<div class="tue" data-day="tue" data-date=""></div>
-			<div class="wed" data-day="wed" data-date=""></div>
-			<div class="thur" data-day="thur" data-date=""></div>
-			<div class="fri" data-day="fri" data-date=""></div>
-			<div class="sat" data-day="sat" data-date=""></div>
-			<div class="sun" data-day="sun" data-date=""></div>
-		</div>
-		<div class="hour">
-			<div class="time" data-date="11pm"></div>
-			<div class="mon" data-day="mon" data-date=""></div>
-			<div class="tue" data-day="tue" data-date=""></div>
-			<div class="wed" data-day="wed" data-date=""></div>
-			<div class="thur" data-day="thur" data-date=""></div>
-			<div class="fri" data-day="fri" data-date=""></div>
-			<div class="sat" data-day="sat" data-date=""></div>
-			<div class="sun" data-day="sun" data-date=""></div>
-		</div>
-		<div class="hour">
-			<div class="time" data-date="12am"></div>
-			<div class="mon" data-day="mon" data-date=""></div>
-			<div class="tue" data-day="tue" data-date=""></div>
-			<div class="wed" data-day="wed" data-date=""></div>
-			<div class="thur" data-day="thur" data-date=""></div>
-			<div class="fri" data-day="fri" data-date=""></div>
-			<div class="sat" data-day="sat" data-date=""></div>
-			<div class="sun" data-day="sun" data-date=""></div>
-		</div>
+
+		<% _.each(hours, function( hour ) { %>
+			<div class="hour">
+				<div class="time" data-date="<%= hour %>"><%= moment.duration(hour, 'hour').format('h:mm') %></div>
+				<% _.each(days, function( day ) { %>
+					<div class="<%= day %>" data-day="<%= day %>">
+						<a href="javascript:;" role="button" data-goto="book"></a>
+						<!-- <span role="button" class="booked"></span> -->
+					</div>
+				<% }); %>
+			</div>
+		<% }); %>
+
 	</div>
 </div>

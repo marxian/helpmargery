@@ -29,5 +29,13 @@
 			}
 		});
 
+		$('.week-prev').on('click', function() {
+			// moment
+		});
+
+		$('.week-next').on('click', function() {
+			// 
+		});
+
 	});
 })(jQuery);
