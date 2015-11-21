@@ -48,6 +48,7 @@
 			<% } %>
 
 			<% if ( space.address1 || space.address2 || space.town || space.county || space.postcode) { %>
+				<br/>
 				<h4>Address</h4>
 				<% if (space.address1) { %>
 					<%= space.address1 %><br/>
@@ -65,6 +66,9 @@
 					<%= space.postcode %><br/>
 				<% } %>
 			<% } %>
+			<br/>
+			<h4>Preferred payment method</h4>
+				Cash<br/>
 			<div class="buttons">
 				<button data-goto="availability" class="availability">Check Availability</button>
 			</div>
