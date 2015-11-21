@@ -108,6 +108,7 @@ p {
 img {
 	height: auto;
 	max-width: 100%;
+	border-radius: 6px;
 }
 
 button {
@@ -191,7 +192,107 @@ label {
 	margin-top: 0;
 }
 
-/* ----------------------------------------------- */
+
+
+/*---------------------------------------------------
+
+Login screen
+
+---------------------------*/
+
+.login {
+	margin: 2em auto;
+	width: 280px;
+	text-align: center;
+	background: #f3f4f5;
+}
+
+.login button {
+	width: 80%;
+	margin: 1.5em 0;
+}
+
+.login img {
+	padding-bottom: 1em;
+}
+
+.login input {
+	width: 80%;
+	margin-top: 0.2em;
+	border-radius: 5px;
+	padding: 1em;
+}
+
+.login label {
+	text-align: left;
+	margin-left: 1.7em;
+	margin-top: 1em;
+}
+
+.create-header {
+	background: #88c6e5;
+	padding: 2em 0 2em 2em;
+}
+
+.create-header h1 {
+ padding: 0 0 1em 0;
+}
+
+.fill-in {
+	margin: 2em 0 1em 1em;
+}
+
+.space {
+	width: 360px;
+	padding-left: 1em;
+}
+
+.space button {
+	width: 100%;
+	margin: 1em 0;
+}
+
+.space img {
+	margin: 1em 0;
+}
+
+.space label {
+	float: left;
+	padding: 0.5em 0 0 1em;
+	margin-top: 0.5em;
+}
+
+.space textarea,
+.space input,
+.space select {
+	float: right;
+	border-radius: 5px;
+	background: #c5cacb;
+	margin: 0.5em 0 0 1em;
+	padding: 0.7em;
+	width: 52%;
+}
+
+textarea, input, select {
+	outline: none;
+	border: 0px;
+ }
+
+.space #image {
+	background: #88c6e5;
+}
+
+#hiring_charge,
+.space select
+ {
+	background: #88c6e5;
+	width: 57.5%;
+}
+
+#facilities {
+	float: right;
+	display: block;
+}
 
 .about ul {
 	list-style: none;
