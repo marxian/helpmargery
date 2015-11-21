@@ -213,7 +213,12 @@ Login screen
 }
 
 .login input {
-	width: 200px;
+	width: 80%;
+	margin-top: 0.2em;
+}
+
+.login label {
+	margin-top: 1em;
 }
 
 
