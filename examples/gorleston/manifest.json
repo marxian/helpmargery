@@ -6,7 +6,7 @@
     "content_scripts": [
         {
             "matches": [
-                "http://www.standrewsgorleston.org.uk/about-us/our-church/the-chapter-house/*"
+                "http://www.dioceseofnorwich.org/church/gorleston-on-sea-st-andrew/*"
             ],
             "all_frames": true,
             "run_at": "document_end",
