@@ -234,6 +234,8 @@ Login screen
 .create-header {
 	background: #88c6e5;
 	padding: 2em 0 2em 2em;
+	border-radius: 6px;
+	margin: 1em 1em 1em 1em;
 }
 
 .create-header h1 {
@@ -247,6 +249,10 @@ Login screen
 .space {
 	width: 360px;
 	padding-left: 1em;
+}
+
+.admin-item h2 {
+	margin-left: 2em;
 }
 
 .space button {
@@ -264,17 +270,20 @@ Login screen
 	margin-top: 0.5em;
 }
 
+.hljs {
+	width: 280px;
+}
+
 .space textarea,
 .space input,
 .space select {
 	float: right;
 	border-radius: 5px;
-	background: #c5cacb;
+	background: #DADDDD;
 	margin: 0.5em 0 0 1em;
 	padding: 0.7em;
 	width: 52%;
 }
-
 
 .widget-page .goto.book input,
 .widget-page .goto.book textarea,
@@ -299,6 +308,10 @@ Login screen
 .widget-page .footer,
 .widget-page .footer a {
 	border-radius: 0 0 10px 10px;
+}
+
+.admin-item {
+	padding: 30px;
 }
 
 textarea, input, select {
@@ -527,6 +540,11 @@ body[class^="_admin_"] {
 	color: inherit;
 	cursor: auto;
 }
+
+.left-navigation .username {
+	text-align: center;
+}
+
 .left-navigation a:visited {
 	text-decoration: inherit;
 	color: inherit;
@@ -554,7 +572,7 @@ body[class^="_admin_"] {
 	display: inline;
 }
 .left-navigation li.selected {
-	background-color: #88c6e5;
+	background-color: #931b26;
 }
 .left-navigation li.selected:hover, .left-navigation li.selected .fa, .left-navigation li.selected span {
 	color:white;
