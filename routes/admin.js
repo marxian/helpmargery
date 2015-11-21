@@ -18,7 +18,7 @@ router.get('/spaces', function(req, res, next) {
 	models.Space.find({'owner.name': req.session.admin}, function(err, docs) {
 		var spaces = docs;
 		res.render('admin/spaces/index', {
-			title: 'All your spaces belong to us',
+			title: 'Your Spaces',
 			spaces: spaces,
 			facilities: models.Space.schema.path('facilities').options.enum,
 			hiring_models: models.Space.schema.path('hiring_model').options.enum,
