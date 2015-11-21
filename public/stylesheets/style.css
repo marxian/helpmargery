@@ -268,7 +268,7 @@ Login screen
 .space select {
 	float: right;
 	border-radius: 5px;
-	background: #c5cacb;
+	background: #DADDDD;
 	margin: 0.5em 0 0 1em;
 	padding: 0.7em;
 	width: 52%;
@@ -500,6 +500,11 @@ body[class^="_admin_"] {
 	color: inherit;
 	cursor: auto;
 }
+
+.left-navigation .username {
+	text-align: center;
+}
+
 .left-navigation a:visited {
 	text-decoration: inherit;
 	color: inherit;
