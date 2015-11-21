@@ -72,11 +72,17 @@ body {
 	-webkit-tap-highlight-color: transparent;
 }
 
-#widget {
-	height: 100%;
+.widget-page > div {
+	display: flex;
+	flex-direction: column;
+	height: 568px;
+	max-width: 320px;
+	text-align: center;
+	line-height: 1.5;
+	background-color: #f3f4f5; /* Very light */
 }
-
-.widget-page {
+/* pls pls pls keep this widget-page selector */
+.widget-page > div {
 	display: flex;
 	flex-direction: column;
 	height: 568px;
@@ -107,7 +113,7 @@ img {
 
 button {
 	border: 0;
-	border-radius: 0;
+	border-radius: 6px;
 	padding: 10px 12px;
 	cursor: pointer;
 	color: #fff;
@@ -142,7 +148,6 @@ label {
 
 .top button {
 	width: 44px;
-	border-radius: 0;
 }
 
 .goto {
@@ -182,7 +187,85 @@ label {
 	margin-top: 0;
 }
 
-/* ----------------------------------------------- */
+
+
+
+/*---------------------------------------------------
+
+Login screen
+
+---------------------------*/
+
+.login {
+	margin: 2em auto;
+	width: 280px;
+	text-align: center;
+	background: #f3f4f5;
+}
+
+.login button {
+	width: 80%;
+	margin: 1.5em 0;
+}
+
+.login img {
+	padding-bottom: 1em;
+}
+
+.login input {
+	width: 80%;
+	margin-top: 0.2em;
+}
+
+.login label {
+	text-align: left;
+	margin-left: 1.7em;
+	margin-top: 1em;
+}
+
+.space {
+	width: 360px;
+}
+
+.space button {
+	width: 100%;
+	margin: 1em 0;
+}
+
+.space label {
+	float: left;
+	padding: 0.5em 0 0 1em;
+	margin-top: 0.5em;
+}
+
+.space textarea,
+.space input,
+.space select {
+	float: right;
+	border-radius: 5px;
+	background: #c5cacb;
+	margin: 0.5em 0 0 1em;
+	padding: 0.7em;
+	width: 52%;
+}
+
+textarea, input, select {
+	outline: none;
+	border: 0px;
+ }
+
+
+
+#hiring_charge,
+.space select
+ {
+	background: #88c6e5;
+}
+
+#facilities {
+	float: right;
+	display: block;
+}
 
 .about ul {
 	list-style: none;
@@ -308,7 +391,7 @@ label {
 
 .th > span:last-child,
 .hour > div:last-child {
-	margin-right: 0;
+	margin-right: 0
 }
 
 /* Anthony */
@@ -430,4 +513,19 @@ img.profile {
 	max-width: 55px;
 	display: block;
 	margin: 10px auto 25px auto;
+}
+
+ul.messages {
+	width: 100%;
+	color: white;
+	padding-top: 7px;
+}
+.messages li.success {
+	padding: 10px 25px;
+	background-color: #88C6E5;
+}
+.messages .close {
+	display: inline-block;
+	float: right;
+	cursor: pointer;
 }

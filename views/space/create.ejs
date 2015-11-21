@@ -1,8 +1,8 @@
-<% layout('admin_layout') -%>
+<% layout('layout') -%>
 
 <div class="goto create wrapper space">
 	<h1><%= title %></h1>
-	<form id="for-js-hackery" action="/admin/new" method="post" enctype="multipart/form-data">
+	<form id="for-js-hackery" action="/new" method="post" enctype="multipart/form-data">
 		<fieldset>
 			<div class="vcenter">
 				<div class="form-item">
@@ -72,7 +72,7 @@
 
 				<div class="form-item">
 					<label for="hire_charge">Hiring charge</label>
-					<input id="hire_charge" name="hire_charge" placeholder="£" type="text"/><br/>
+					<input id="hiring_charge" name="hiring_charge" placeholder="£" type="text"/><br/>
 				</div>
 
 				<div class="form-item">
@@ -83,10 +83,6 @@
 					</select>
 				</div>
 			</div>
-
-
-			<input type="hidden" name="owner[name]" value="<%= adminUsername %>" />
-			<input type="hidden" name="owner[email]" value="<%= adminUsername %>@everydayspaces.co.uk" />
 		</fieldset>
 		<button type="submit" value="Save Space">Save Space</button>
 	</form>
@@ -97,20 +93,20 @@
 			<% if (updateSpace.image && typeof updateSpace.image === 'object' && updateSpace.image.buffer && updateSpace.image.mimetype) { %>
 				var image = 'data:<%= updateSpace.image.mimetype %>;base64,<%= updateSpace.image.buffer.toString('base64') -%>';
 
-				$('.image-form-item').before('<img width="370" height="370" title="current image" src="' + image + '" />');
+				$('.image-form-item').before('<img width=370 height=370 title="current image" src="' + image + '" />');
 			<% } %>
 
 			var $form = $('#for-js-hackery');
 
 			$form
-				.attr('action', '/admin/edit/<%= updateSpace._id %>');
+				.attr('action', '/edit/<%= updateSpace._id %>');
 
 			_.forEach(space, function(val, key) {
 				var $el = $form.find(':input[name=' + key + ']');
 				switch(typeof val) {
 					case 'string':
 					case 'object':
-						if( val && $el.length && key !== 'image' ) {
+						if( val && $el.length ) {
 							$el.val(val);
 						}
 						break;

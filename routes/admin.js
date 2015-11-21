@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
 
 /* Spaces */
 router.get('/spaces', function(req, res, next) {
-	models.Space.find({}, function(err, docs) {
+	models.Space.find({'owner.name': req.session.admin}, function(err, docs) {
 		var spaces = docs;
 		res.render('admin/spaces/index', {
 			title: 'All your spaces belong to us',
