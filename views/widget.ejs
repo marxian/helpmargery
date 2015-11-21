@@ -87,20 +87,16 @@
 		</div>
 		<div class="vcenter">
 			<form method="POST" action="<%= space._id %>/book">
-				<label for="start">From:</label>
-				<input name="start" value="2015-12-20T00:00:00.025Z" />
+				<input type="hidden" name="start" value="" />
+				<input type="hidden" name="end" value="" />
 
-				<label for="end">To</label>
-				<input name="end" value="2015-11-20T16:01:10.025Z" />
+				<label for="owner[name]">Your name</label>
+				<input required="required" name="owner[name]" value="Alison" />
 
-				<label for="owner[name]">Owner name</label>
-				<input name="owner[name]" value="Alison" />
+				<label for="owner[email]">Your email</label>
+				<input required="required" name="owner[email]" value="Alison@danceclassesrus.com" />
 
-				<label for="owner[email]">Owner email</label>
-				<input name="owner[email]" value="Alison@danceclassesrus.com" />
-
-				<label for="booker[name]">Booker</label>
-				<input name="booker[name]" value="Dance classes r us" />
+				<input type="hidden" name="booker[name]" value="booked with widget" />
 
 				<div>
 					<button type="submit">Create booking</button>
@@ -117,9 +113,6 @@
 	<% } %>
 
 </div>
-
-<h2>Bookings</h2>
-<code><%= JSON.stringify(space.bookings) %></code>
 
 <script type="text/javascript">
 	window.space = <%- JSON.stringify(space) -%>;
