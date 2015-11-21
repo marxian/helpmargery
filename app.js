@@ -15,6 +15,7 @@ var routes = require('./routes/index');
 var widget = require('./routes/widget');
 var auth = require('./routes/auth');
 var admin = require('./routes/admin');
+var superadmin = require('./routes/superadmin');
 
 var app = express();
 
@@ -48,6 +49,7 @@ app.use('/', routes);
 app.use('/widget', widget);
 app.use('/', auth);
 app.use('/admin', admin);
+app.use('/superadmin', superadmin);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
