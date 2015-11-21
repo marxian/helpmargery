@@ -11,7 +11,10 @@ router.get('/sabot.js', function(req, res, next){
 		if (err || !space) {
 			res.send('');
 		} else {
-			res.render('sabot', {spaceId: spaceId});
+			res.render('sabot', {
+				spaceId: spaceId,
+				widget_url: (process.env.NODE_ENV === 'production' ? 'http://helpmargery.herokuapp.com/' : 'http://localhost:3000/') + 'widget/'
+			});
 		}
 	});
 });
