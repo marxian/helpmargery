@@ -1,0 +1,20 @@
+{
+    "name": "helpmargery - diocease of norwich",
+    "version": "0.1",
+    "manifest_version": 2,
+    "description": "Add a helpmargey widget to diocease of Norwich site",
+    "content_scripts": [
+        {
+            "matches": [
+                "http://www.dioceseofnorwich.org/church/deopham-st-andrew/*"
+            ],
+            "all_frames": true,
+            "run_at": "document_end",
+            "css": [],
+            "js": [
+            	"jquery.js",
+                "embederator.js"
+            ]
+        }
+    ]
+}
