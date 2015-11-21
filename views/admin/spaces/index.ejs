@@ -1,5 +1,4 @@
-<% layout('layout') -%>
-<h1><%= title %></h1>
+<% layout('admin_layout') -%>
 
 <div class="space">
 	<% _.each(spaces, function(space) { %>
@@ -15,5 +14,3 @@
 		</div>
  	<% }) %>
 </div>
-
-<a href="/admin/new">Add a new Space</a>

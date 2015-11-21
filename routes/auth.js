@@ -22,10 +22,13 @@ router.get('/login', function(req, res, next) {
 });
 
 router.post('/login', function(req, res, next) {
+	req.session.admin = req.body.username;
+	res.redirect('/admin/spaces');
+});
+
+router.get('/logout', function(req, res) {
 	req.session.admin = null;
 	res.redirect('/');
 });
-
-
 
 module.exports = router;
