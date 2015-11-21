@@ -103,7 +103,7 @@ img {
 
 button {
 	border: 0;
-	border-radius: 15px;
+	border-radius: 6px;
 	padding: 10px 12px;
 	cursor: pointer;
 	color: #fff;
@@ -213,6 +213,18 @@ Login screen
 .space textarea,
 .space input {
 	width: 90%;
+}
+
+#hiring_charge,
+select
+ {
+	width: 40%;
+	float: left;
+	margin-left: 1em;
+}
+#facilities {
+	float: left;
+	display: block;
 }
 
 .about ul {
