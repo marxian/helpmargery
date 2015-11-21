@@ -21,7 +21,7 @@ router.post('/login', function(req, res, next) {
 });
 
 router.get('/logout', function(req, res) {
-	req.session.admin = null;
+	req.session = null;
 	res.redirect('/');
 });
 
