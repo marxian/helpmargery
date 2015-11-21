@@ -5,12 +5,6 @@ var _ = require('lodash');
 var format = require('string-format');
 format.extend(String.prototype);
 
-router.use(function(req, res, next) {
-	res.locals.adminUsername = req.session.admin;
-	res.locals.page = req.url && req.url.replace(/\//g, '_');
-	next();
-});
-
 router.get('/login', function(req, res, next) {
 	if (req.session.admin) {
 		res.redirect('/admin/spaces');
