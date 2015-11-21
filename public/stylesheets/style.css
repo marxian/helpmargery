@@ -546,3 +546,7 @@ ul.messages {
 	float: right;
 	cursor: pointer;
 }
+
+.form-item.form-facilities {
+	margin: 15px 0;		
+}
