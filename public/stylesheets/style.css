@@ -72,7 +72,7 @@ body {
 	-webkit-tap-highlight-color: transparent;
 }
 
-.widget-page > div {
+body > div {
 	display: flex;
 	flex-direction: column;
 	height: 568px;
@@ -120,6 +120,11 @@ button {
 
 button:hover {
 	background-color: #931b26; /* Darker red */
+}
+
+button.availability {
+	margin-top: 5px;
+	padding: 20px 12px;
 }
 
 label {
@@ -213,7 +218,16 @@ label {
 	margin-right: 2px;
 }
 
+.buttons {
+	padding: 0 5px;
+}
+
+.buttons button {
+	width: 100%;
+}
+
 #calendar {
+	padding: 0 10px;
 	margin-bottom: 44px;
 	overflow-y: auto;
 }
@@ -294,7 +308,7 @@ label {
 
 /* Anthony */
 /* sorry */
-body {
+[class^="_admin_"] {
 	/* I padded this 30px more than i need to
 	 * I did this because I tried to make the content container margin: 0 auto;
 	 * but instead it just looked really broken because of my complete lack of understanding
