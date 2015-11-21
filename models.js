@@ -58,6 +58,7 @@ var spaceSchema = new Schema({
 	postcode: String,
 	hiring_model: { type: String, enum: hiringModels },
 	hiring_granularity: {type: String, enum: hiringGranularities},
-	hire_charge: Number
+	hire_charge: Number,
+	owner: personSchema
 });
 var Space = models.Space = mongoose.model('Space', spaceSchema);
