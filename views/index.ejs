@@ -7,7 +7,6 @@
 				<a class="nav-links" href="#sharer">I have space</a>
 				<a class="nav-links" href="#meetm"> Meet the sharers</a>
 				<a class="nav-links" href="#looker">I want space</a>
-				<a class="nav-links" href="/login">Login</a>
 			</div>
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -17,8 +16,10 @@
 					<span class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="#"></a>
+
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
+
 			</div><!--/.nav-collapse -->
 		</div>
 	</nav>
@@ -29,7 +30,7 @@
 					<div class="transparent-cont">
 						<h1 class="cover-heading">Welcome to Everyday Spaces</h1>
 						<p class="lead">Making community places Everyday Spaces.</p>
-							<a class="btn btn-primary btn-lg " href="/spaces"><span class="glyphicon glyphicon-search"></span> Search for a church</a>
+							<a class="btn btn-primary btn-lg " href="/spaces"><i class="glyphicon glyphicon-search"></i>Search for a church</a>
 						<p class="lead">
 						</p>
 					</div>
@@ -38,7 +39,7 @@
 					<div class="transparent-cont">
 						<h1 class="cover-heading">Welcome to Everyday Spaces</h1>
 						<p class="lead">Making community places Everyday Spaces.</p>
-							<a class="btn btn-primary btn-lg " href="/spaces"><span class="glyphicon glyphicon-search">Search for a church</span></a>
+						<a class="btn btn-primary btn-lg " href="/spaces"><i class="glyphicon glyphicon-search"></i>Search for a church</a>
 						<p class="lead">
 						</p>
 					</div>
@@ -47,7 +48,7 @@
 					<div class="transparent-cont">
 						<h1 class="cover-heading">Welcome to Everyday Spaces</h1>
 						<p class="lead">Making community places Everyday Spaces.</p>
-						<a class="btn btn-primary btn-lg " href="/spaces"><span class="glyphicon glyphicon-search">Search for a church</span></a>
+					<a class="btn btn-primary btn-lg " href="/spaces"><i class="glyphicon glyphicon-search"></i>Search for a church</a>
 						<p class="lead">
 						</p>
 					</div>
@@ -99,8 +100,7 @@
 					<div class="row featurette">
 						<div class="col-md-7">
 							<h2 class="featurette-heading">I want a <span class="text-muted">space.</span></h2>
-							<p class="lead">That's great too! As we get more venues on board we'll be providing an easy to use search system to enable you to find that space! If you'd like to get notified when it's ready please email <a href="mailto:beta@everydayspaces.co.uk">beta@everydayspaces.co.uk</a>   </p>
-							<p>Meet some people who have registered interest in ourEveryday Spaces</p>
+							<p class="lead">That's great too! Simply search for a church that meets your requirements.</p>
 						</div>
 							<div class="col-md-5">
 								<img class="featurette-image img-responsive center-block" src="/img/Chapel.jpg" alt="Generic placeholder image">
@@ -113,24 +113,27 @@
 	</div>
 	<!-- Bootstrap core JavaScript
 	================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<!-- Include js plugin -->
 	<script src="/javascripts/owl.carousel.js"></script>
 	<script>
-		$(document).ready(function() {
-			$("#owl-demo").owlCarousel({
+	$(document).ready(function() {
 
-				navigation : true, // Show next and prev buttons
-				slideSpeed : 300,
-				paginationSpeed : 400,
-				singleItem:true
-				// "singleItem:true" is a shortcut for:
-				// items : 1,
-				// itemsDesktop : false,
-				// itemsDesktopSmall : false,
-				// itemsTablet: false,
-				// itemsMobile : false
-			});
+		$("#owl-demo").owlCarousel({
+
+			navigation : true, // Show next and prev buttons
+			slideSpeed : 300,
+			paginationSpeed : 400,
+			singleItem:true
+			// "singleItem:true" is a shortcut for:
+			// items : 1,
+			// itemsDesktop : false,
+			// itemsDesktopSmall : false,
+			// itemsTablet: false,
+			// itemsMobile : false
 		});
+	});
 	</script>
 	<!-- <script src="../../dist/js/bootstrap.min.js"></script> -->
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
