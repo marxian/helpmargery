@@ -53,7 +53,7 @@ router.post('/:id/book', function(req, res, next) {
 			// res.end(JSON.stringify(req.body));
 			space.bookings.push(req.body);
 
-			space.save(function(err, booking) {
+			space.save(function(err) {
 				if (err) {
 					console.log(err);
 					next(err);
@@ -61,7 +61,7 @@ router.post('/:id/book', function(req, res, next) {
 					res.render('widget_success', {
 						title: space.name,
 						space: space,
-						booking: booking
+						booking: req.body
 					});
 				}
 			});
