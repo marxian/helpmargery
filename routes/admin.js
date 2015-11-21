@@ -48,7 +48,7 @@ router.post('/new', uploader.single('image'), function(req, res, next) {
 			next(err);
 		} else {
 			req.flash('success', 'Your new space: {name} has been created.'.format(space));
-			res.redirect('admin/spaces');
+			res.redirect('/admin/spaces');
 		}
 	});
 });
