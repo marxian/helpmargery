@@ -4,6 +4,7 @@
 		<title><%= (this.title && (this.title + ' | ') || '') + 'Everyday Spaces' %></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 		<link rel="stylesheet" href="/stylesheets/chosen.css" />
+		<link rel="stylesheet" href="/fa/css/font-awesome.min.css">
 		<link rel="stylesheet" href="/stylesheets/style.css" />
 		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
 		<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
@@ -39,5 +40,16 @@
 			</ul>
 		<% } %>
 		<%- body -%>
+		<nav class="left-navigation faded-border">
+			<img src="/img/smallmargy.png" class="profile">
+			<ul class="controls">
+				<li><a href="/spaces"><i class="fa fa-home"></i><span>Home</span></a></li>	
+				<li><a href="/spaces"><i class="fa fa-clone"></i><span>Your Spaces</span></a></li>	
+				<li><a href="/spaces"><i class="fa fa-envelope"></i><span>Messages</span></a></li>	
+				<li><a href="/spaces"><i class="fa fa-wrench"></i><span>Settings</span></a></li>	
+				<li><a href="/"><i class="fa fa-power-off"></i><span>Logout</span></a></li>	
+			</ul>
+			<div class="logo"></div>
+		</nav>
 	</body>
 </html>
