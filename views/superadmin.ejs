@@ -1,0 +1,17 @@
+
+
+<h1><%= title %></h1>
+
+<div class="grid" style="margin-right: 25px;">
+	<% _.each(spaces, function(space) { %>
+ 		<div style="float: left; border: 1px black;">
+	 		<script
+				type="text/javascript"
+				src="/widget/sabot.js?spaceId=<%= space.id %>"
+				async="true"></script>
+			<br/>
+			<a href="/superadmin/delete/<%= space.id %>">DELETE</a><br/>
+			OWNER: <%= space.owner ? space.owner.name : 'UNKNOWN' %>
+		</div>
+ 	<% }) %>
+</div>

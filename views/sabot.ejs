@@ -45,6 +45,9 @@
 	var params = getQueryParameters(script.src.replace(/^.*\?/, ''));
 	var spaceId = params.spaceId;
 	var widgetPage = '<%= widget_url %>' + spaceId;
+	if (params.unbranded) {
+		widgetPage = widgetPage + '?unbranded=1';
+	} 
 	setTimeout(function(){
 		var tgs = getScript();
 		var iframe = document.createElement('IFRAME');
@@ -54,6 +57,6 @@
 		iframe.src = widgetPage;
 
 		tgs.parentNode.insertBefore(iframe, tgs.nextSibling);
-		iFrameResize({log:true, checkOrigin: false}, '#helpmargery-<%= spaceId %>');
+		iFrameResize({log:false, checkOrigin: false}, '#helpmargery-<%= spaceId %>');
 	},100);
 })();

@@ -34,7 +34,8 @@ router.get('/:id', function(req, res, next) {
 		} else {
 			res.render('widget', {
 				title: 'Space: ' + space.name,
-				space: space
+				space: space,
+				unbranded: req.query.unbranded
 			});
 		}
 	});
