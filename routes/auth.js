@@ -26,4 +26,9 @@ router.post('/login', function(req, res, next) {
 	res.redirect('/admin/spaces');
 });
 
+router.get('/logout', function(req, res) {
+	req.session.admin = null;
+	res.redirect('/');
+});
+
 module.exports = router;
