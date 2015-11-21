@@ -1,0 +1,117 @@
+<% layout('layout') -%>
+
+<div class="goto create wrapper space">
+	<h1><%= title %></h1>
+	<form id="for-js-hackery" action="/new" method="post" enctype="multipart/form-data">
+		<fieldset>
+			<div class="vcenter">
+				<div class="form-item">
+					<label for="name">Name</label>
+					<input id="name" name="name" placeholder="Norwich Central Baptist Church" />
+					<br/>
+				</div>
+
+				<div class="form-item">
+					<label for="description">Description</label>
+					<textarea id="description" name="description"></textarea>
+				</div>
+
+				<div class="form-item">
+					<label for="facilities">Facilites</label>
+					<select id="facilities" data-placeholder="Select the facilities available" name="facilities" multiple="true">
+						<% facilities.forEach(function(f){ %>
+						<option value="<%= f %>"><%= f %></option>
+						<% }) %>
+					</select>
+				</div>
+				<!-- Sorry -->
+				<script>
+					$(document).ready(function() {
+						$('#facilities').chosen();
+					});
+				</script>
+
+				<div class="form-item">
+					<label for="address1">Address line one</label>
+					<input id="address1" name="address1" type="text"/>
+				</div>
+
+				<div class="form-item">
+					<label for="address2">Address line two</label>
+					<input id="address2" name="address2" type="text"/>
+				</div>
+
+				<div class="form-item">
+					<label for="town">Town</label>
+					<input id="town" name="town" type="text"/>
+				</div>
+
+				<div class="form-item">
+					<label for="county">County</label>
+					<input id="county" name="county" type="text"/>
+				</div>
+
+				<div class="form-item">
+					<label for="postcode">Postcode</label>
+					<input id="postcode" name="postcode" type="text"/>
+				</div>
+
+				<div class="form-item">
+					<label for="hiring_model">Hiring model</label>
+					<select id="hiring_model" name="hiring_model">
+						<% hiring_models.forEach(function(m){ %>
+						<option value="<%= m %>"><%= m %></option>
+						<% }) %>
+					</select>
+				</div>
+
+				<div class="form-item image-form-item">
+					<label for="image">Display image</label>
+					<input type="file" name="image" id="image" />
+				</div>
+
+				<div class="form-item">
+					<label for="hire_charge">Hiring charge</label>
+					<input id="hiring_charge" name="hiring_charge" placeholder="£" type="text"/><br/>
+				</div>
+
+				<div class="form-item">
+					<select name="hiring_granularity">
+						<% hiring_granularity.forEach(function(v){ %>
+							<option value="<%= v %>"><%= v %></option>
+						<% }) %>
+					</select>
+				</div>
+			</div>
+		</fieldset>
+		<button type="submit" value="Save Space">Save Space</button>
+	</form>
+	<% if (updateSpace) { %>
+		<script type="text/javascript">
+			var space = <%- JSON.stringify(_.omit(updateSpace, 'image')) -%>;
+
+			<% if (updateSpace.image && typeof updateSpace.image === 'object' && updateSpace.image.buffer && updateSpace.image.mimetype) { %>
+				var image = 'data:<%= updateSpace.image.mimetype %>;base64,<%= updateSpace.image.buffer.toString('base64') -%>';
+
+				$('.image-form-item').before('<img width=370 height=370 title="current image" src="' + image + '" />');
+			<% } %>
+
+			var $form = $('#for-js-hackery');
+
+			$form
+				.attr('action', '/edit/<%= updateSpace._id %>');
+
+			_.forEach(space, function(val, key) {
+				var $el = $form.find(':input[name=' + key + ']');
+				switch(typeof val) {
+					case 'string':
+					case 'object':
+						if( val && $el.length ) {
+							$el.val(val);
+						}
+						break;
+				}
+			});
+		</script>
+	<% } %>
+</div>
