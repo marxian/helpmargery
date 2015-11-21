@@ -103,7 +103,7 @@ img {
 
 button {
 	border: 0;
-	border-radius: 0;
+	border-radius: 15px;
 	padding: 10px 12px;
 	cursor: pointer;
 	color: #fff;
@@ -176,6 +176,25 @@ label {
 	float: right;
 	margin-top: 0;
 }
+
+
+
+
+/*---------------------------------------------------
+
+Login screen
+
+---------------------------*/
+
+
+.login,
+.login-form {
+	width: 560px;
+	background: red;
+	margin: auto;
+}
+
+
 
 /* ----------------------------------------------- */
 
@@ -308,7 +327,7 @@ label {
 
 /* Anthony */
 /* sorry */
-[class^="_admin_"] {
+body[class^="_admin_"] {
 	/* I padded this 30px more than i need to
 	 * I did this because I tried to make the content container margin: 0 auto;
 	 * but instead it just looked really broken because of my complete lack of understanding
@@ -379,10 +398,10 @@ label {
 /* http://stackoverflow.com/questions/6868009 */
 .left-navigation a:link {
 	text-decoration: inherit;
-    color: inherit;
-    cursor: auto;
     align-self: center;
     white-space: nowrap;
+	color: inherit;
+	cursor: auto;
 }
 .left-navigation a:visited {
 	text-decoration: inherit;
