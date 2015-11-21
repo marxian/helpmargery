@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Everyday Spaces</title>
+		<title><%= (this.title && (this.title + ' | ') || '') + 'Everyday Spaces' %></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+		<link rel="stylesheet" href="/stylesheets/chosen.css" />
 		<link rel="stylesheet" href="/stylesheets/style.css" />
 		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
 		<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
@@ -25,6 +26,8 @@
 		<script type="text/javascript" src="/javascripts/thirdparty/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript" src="/javascripts/thirdparty/mithril.js"></script>
 		<script type="text/javascript" src="/javascripts/thirdparty/lodash.js"></script>
+		<script type="text/javascript" src="/javascripts/thirdparty/chosen.jquery.js"></script>
+		<script type="text/javascript" src="/javascripts/thirdparty/chosen.proto.js"></script>
 	</head>
 	<body>
 		<h1>Welcome back <%= adminUsername %></h1>

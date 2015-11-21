@@ -19,12 +19,18 @@
 
 			<div class="form-item">
 				<label for="facilities">Facilites</label>
-				<select id="facilities" name="facilities" multiple="true">
+				<select id="facilities" data-placeholder="Select the facilities available" name="facilities" multiple="true">
 					<% facilities.forEach(function(f){ %>
 						<option value="<%= f %>"><%= f %></option>
 					<% }) %>
 				</select>
 			</div>
+			<!-- Sorry -->
+			<script>
+				$(document).ready(function() {
+					$('#facilities').chosen();	
+				});
+			</script>
 
 			<div class="form-item">
 				<label for="address1">Address line one</label>
