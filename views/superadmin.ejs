@@ -10,7 +10,8 @@
 				src="/widget/sabot.js?spaceId=<%= space.id %>"
 				async="true"></script>
 			<br/>
-			<a href="/superadmin/delete/<%= space.id %>">DELETE</a>
+			<a href="/superadmin/delete/<%= space.id %>">DELETE</a><br/>
+			OWNER: <%= space.owner ? space.owner.name : 'UNKNOWN' %>
 		</div>
  	<% }) %>
 </div>
