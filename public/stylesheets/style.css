@@ -510,6 +510,12 @@ body[class^="_admin_"] {
 .left-navigation:hover li span {
 	display: inline;
 }
+.left-navigation li.selected {
+	background-color: #88c6e5;
+}
+.left-navigation li.selected:hover, .left-navigation li.selected .fa, .left-navigation li.selected span {
+	color:white;
+}
 .logo {
 	opacity: 0.7;
 	background-image: url(/img/Everyday-spaces.png);
