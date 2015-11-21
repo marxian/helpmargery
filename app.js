@@ -2,7 +2,6 @@ var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
-var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var _ = require('lodash');
 var moment = require('moment');
@@ -10,7 +9,7 @@ require('moment-range');
 require('moment-duration-format');
 // this middleware allows exposing flash messages through an express session (cookies!)
 var flash = require('express-flash');
-var session = require('express-session');
+var session = require('cookie-session');
 
 var routes = require('./routes/index');
 var widget = require('./routes/widget');
@@ -33,17 +32,18 @@ app.locals.moment = moment;
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cookieParser());
 app.use(session({
-	secret: 'm@rg3ry-rul3z',
-	// I am not sure what these do
-	// it was crying at me... i should RTFM.. but CBATRTFM
-	resave: true,
-	saveUninitialized: true
+  name: 'session',
+  keys: ['m@rg3ry-rul3z', 'mfrgsad-r44ws3z']
 }));
 app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(function(req, res, next){
+  res.locals.adminUsername = req.session.admin;
+  res.locals.page = req.url && req.url.replace(/\//g, '_');
+  next();
+});
 app.use('/', routes);
 app.use('/widget', widget);
 app.use('/', auth);

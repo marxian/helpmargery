@@ -2,7 +2,7 @@
 
 <div class="goto create wrapper">
 	<h1><%= title %></h1>
-	<form id="for-js-hackery" action="/new" method="post" enctype="multipart/form-data">
+	<form id="for-js-hackery" action="/admin/new" method="post" enctype="multipart/form-data">
 		<fieldset>
 			<div class="vcenter">
 				<div class="form-item">
@@ -83,6 +83,10 @@
 					</select>
 				</div>
 			</div>
+
+
+			<input type="hidden" name="owner[name]" value="<%= adminUsername %>" />
+			<input type="hidden" name="owner[email]" value="<%= adminUsername %>@everydayspaces.co.uk" />
 		</fieldset>
 		<button type="submit" value="Save Space">Save Space</button>
 	</form>

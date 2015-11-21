@@ -31,23 +31,33 @@
 		<script type="text/javascript" src="/javascripts/thirdparty/chosen.proto.js"></script>
 	</head>
 	<body class="<%= page %>-page">
-		<h1>Welcome back <%= adminUsername || '' %></h1>
 		<% if(_.size(messages) > 0) { %>
-			<ul>
+			<ul class="messages">
 				<% _.each(messages, function(message, category) { %>
-					<li class="<%= category %>"><%= message %></li>
+					<li class="<%= category %>"><%= message %><div class="close">&#10006;</div></li>
 				<% }); %>
 			</ul>
 		<% } %>
+		<script>
+			//hide the message on click
+			$(document).ready(function() {
+				$('li .close').click(function() {
+					$(this).parent('li').hide();
+				});
+			});
+		</script>
+
+		<h1>Welcome back <%= adminUsername || '' %></h1>
 		<%- body -%>
 		<nav class="left-navigation faded-border">
 			<div class="ln-image-wrapper"><img src="/img/smallmargy.png" class="profile"></div>
 			<ul class="controls">
-				<li><a href="/spaces"><i class="fa fa-home"></i><span>Home</span></a></li>
-				<li><a href="/spaces"><i class="fa fa-clone"></i><span>Your Spaces</span></a></li>
-				<li><a href="/spaces"><i class="fa fa-envelope"></i><span>Messages</span></a></li>
-				<li><a href="/spaces"><i class="fa fa-wrench"></i><span>Settings</span></a></li>
-				<li><a href="/logout"><i class="fa fa-power-off"></i><span>Logout</span></a></li>
+				<li><a href="/admin/spaces"><i class="fa fa-home"></i><span>Home</span></a></li>	
+				<li><a href="/admin/new"><i class="fa fa-plus-square-o"></i><span>Add a Space</span></a></li>	
+				<li><a href="/admin/spaces"><i class="fa fa-clone"></i><span>Your Spaces</span></a></li>	
+				<li><a href="/admin/spaces"><i class="fa fa-envelope"></i><span>Messages</span></a></li>	
+				<li><a href="/admin/spaces"><i class="fa fa-wrench"></i><span>Settings</span></a></li>	
+				<li><a href="/"><i class="fa fa-power-off"></i><span>Logout</span></a></li>	
 			</ul>
 			<div class="logo"></div>
 		</nav>
