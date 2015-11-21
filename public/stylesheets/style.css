@@ -198,15 +198,22 @@ Login screen
 
 .login {
 	margin: 2em auto;
+	width: 280px;
+	text-align: center;
+	background: #f3f4f5;
 }
 
 .login button {
-	width: 90%;
+	width: 80%;
 	margin: 1em 0;
 }
 
 .login img {
 	padding-bottom: 1em;
+}
+
+.login input {
+	width: 200px;
 }
 
 
