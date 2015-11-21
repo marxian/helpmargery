@@ -72,7 +72,17 @@ body {
 	-webkit-tap-highlight-color: transparent;
 }
 
-body > div {
+.widget-page > div {
+	display: flex;
+	flex-direction: column;
+	height: 568px;
+	max-width: 320px;
+	text-align: center;
+	line-height: 1.5;
+	background-color: #f3f4f5; /* Very light */
+}
+/* pls pls pls keep this widget-page selector */
+.widget-page > div {
 	display: flex;
 	flex-direction: column;
 	height: 568px;
