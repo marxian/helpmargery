@@ -462,3 +462,18 @@ img.profile {
 	display: block;
 	margin: 10px auto 25px auto;
 }
+
+ul.messages {
+	width: 100%;
+	color: white;
+	padding-top: 7px;
+}
+.messages li.success {
+	padding: 10px 25px;
+	background-color: #88C6E5;
+}
+.messages .close {
+	display: inline-block;
+	float: right;
+	cursor: pointer;
+}
