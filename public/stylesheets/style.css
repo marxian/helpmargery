@@ -485,6 +485,11 @@ body[class^="_admin_"] {
 	color: inherit;
 	cursor: auto;
 }
+
+.left-navigation .username {
+	text-align: center;
+}
+
 .left-navigation a:visited {
 	text-decoration: inherit;
 	color: inherit;

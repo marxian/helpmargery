@@ -76,7 +76,7 @@
 						<input type="file" name="image" id="image" />
 						<br />
 						<% if (space.image && typeof space.image === 'object' && space.image.buffer && space.image.mimetype) { %>
-							<img width=370 height=370 title="current image" src="data:<%= space.image.mimetype %>;base64,<%= space.image.buffer.toString('base64') -%>" />
+							<img width="200" height="200" title="current image" src="data:<%= space.image.mimetype %>;base64,<%= space.image.buffer.toString('base64') -%>" />
 						<% } %>
 					</div>
 
