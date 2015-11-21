@@ -72,11 +72,7 @@ body {
 	-webkit-tap-highlight-color: transparent;
 }
 
-#widget {
-	height: 100%;
-}
-
-.widget-page {
+body > div {
 	display: flex;
 	flex-direction: column;
 	height: 568px;
@@ -107,7 +103,7 @@ img {
 
 button {
 	border: 0;
-	border-radius: 0;
+	border-radius: 15px;
 	padding: 10px 12px;
 	cursor: pointer;
 	color: #fff;
@@ -142,7 +138,6 @@ label {
 
 .top button {
 	width: 44px;
-	border-radius: 0;
 }
 
 .goto {
@@ -182,7 +177,6 @@ label {
 	margin-top: 0;
 }
 
-<<<<<<< HEAD
 
 
 
@@ -202,14 +196,8 @@ Login screen
 }
 
 .login img {
-	margin-bottom: 1em;
+	padding-bottom: 1em;
 }
-
-
-
-=======
->>>>>>> 9e4574d6238c82d1dfd41dbe199fe764e1b7b1ff
-/* ----------------------------------------------- */
 
 .about ul {
 	list-style: none;
@@ -335,7 +323,7 @@ Login screen
 
 .th > span:last-child,
 .hour > div:last-child {
-	margin-right: 0;
+	margin-right: 0
 }
 
 /* Anthony */
