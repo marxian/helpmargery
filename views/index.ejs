@@ -1,5 +1,136 @@
-<% layout('layout') -%>
+<% layout('home_layout') -%>
+<div class="site-wrapper">
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="link-cont">
+				<a class="nav-links" href="#about"> About </a>
+				<a class="nav-links" href="#sharer">I have space</a>
+				<a class="nav-links" href="#meetm"> Meet the sharers</a>
+				<a class="nav-links" href="#looker">I want space</a>
+				<a class="nav-links" href="/login">Login</a>
+			</div>
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#"></a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+			</div><!--/.nav-collapse -->
+		</div>
+	</nav>
+	<div class="site-wrapper-inner">
+		<div class="cover-container">
+			<div id="owl-demo" class="owl-carousel owl-theme">
+				<div class="item"><img src="/img/Landingpage-club.jpg" alt="The Last of us">
+					<div class="transparent-cont">
+						<h1 class="cover-heading">Welcome to Everyday Spaces</h1>
+						<p class="lead">Connecting everyday people with everyday spaces.</p>
+						<p class="lead">
+						</p>
+					</div>
+				</div>
+				<div class="item"><img src="/img/Landingpage-wighton.jpg" alt="GTA V">
+					<div class="transparent-cont">
+						<h1 class="cover-heading">Welcome to Everyday Spaces</h1>
+						<p class="lead">Making community places Everyday Spaces.</p>
+						<p class="lead">
+						</p>
+					</div>
+				</div>
+				<div class="item"><img src="/img/Landingpage-cromer.jpg" alt="Mirror Edge">
+					<div class="transparent-cont">
+						<h1 class="cover-heading">Welcome to Everyday Spaces</h1>
+						<p class="lead">Connecting everyday people with everyday spaces.</p>
+						<p class="lead">
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="container-marketing">
+				<!-- START THE FEATURETTES -->
+				<hr class="featurette-divider">
+				<section id ="about">
+					<div class="row featurette">
+						<div class="col-md-7">
+							<h2 class="featurette-heading">About<span class="text-muted"> us.</span></h2>
+							<p class="lead">It's simple. We help connect those who have space with those who want space. </p>
+						</div>
+						<div class="col-md-5">
+							<img class="featurette-image img-responsive center-block" src="/img/Wymondham.jpg" alt="Generic placeholder image">
+						</div>
+					</div>
+				</section>
+				<hr class="featurette-divider">
+				<section id ="sharer">
+					<div class="row featurette">
+						<div class="col-md-7 col-md-push-5">
+							<h2 class="featurette-heading">I have a <span class="text-muted">space.</span></h2>
+							<p class="lead">Fantastic!  We offer a booking widget to implement into your existing website, and an admin system to allow you to easily manage bookings. No need for all those post it notes in your diary anymore!<br />If you'd like a widget for your website, or more information please contact us at <a href="mailto:hello@everydayspaces.co.uk"> hello@everydayspaces.co.uk</a></p>
+							<p>Meet some people who rent out their space on Everyday Spaces</p>
+							<p><a href="#meetm">Meet Margery</a></p>
+							<p><a href="#meetr">Meet Roy</a></p>
+						</div>
+						<div class="col-md-5 col-md-pull-7">
+							<img class="featurette-image img-responsive center-block" src="/img/Norfolk-church.jpg" alt="Generic placeholder image">
+						</div>
+					</div>
+				</section>
+				<hr class="featurette-divider">
+				<section id="meetm">
+					<div class="row featurette">
+						<div class="col-md-7">
+							<h2 class="featurette-heading">Meet <span class="text-muted">Margery.</span></h2>
+							<p class="lead">Margery looks after the Brooke Village Hall - she used to take bookings on paper and sometimes forgot bookings and double booked people - now she uses Everyday Spaces and has a widget embedded in her website. Coupled with the tablet her grandchildren bought her for Christmas - the admin system calendar and email alerts allow her to easily manage bookings so she no longer ends up having to suggest they split the hall between 2 bookings!</p>
+						</div>
+						<div class="col-md-5">
+							<img class="featurette-image img-responsive center-block" src="/img/marjorie.jpg" alt="Generic placeholder image">
+						</div>
+					</div>
+				</section>
+				<hr class="featurette-divider">
+				<section id="looker">
+					<div class="row featurette">
+						<div class="col-md-7">
+							<h2 class="featurette-heading">I want a <span class="text-muted">space.</span></h2>
+							<p class="lead">That's great too! As we get more venues on board we'll be providing an easy to use search system to enable you to find that space! If you'd like to get notified when it's ready please email <a href="mailto:beta@everydayspaces.co.uk">beta@everydayspaces.co.uk</a>   </p>
+							<p>Meet some people who have registered interest in ourEveryday Spaces</p>
+						</div>
+							<div class="col-md-5">
+								<img class="featurette-image img-responsive center-block" src="/img/Chapel.jpg" alt="Generic placeholder image">
+							</div>
+						</div>
+				</section>
+				<hr class="featurette-divider">
+			</div>
+		</div>
+	</div>
+	<!-- Bootstrap core JavaScript
+	================================================== -->
+	<!-- Include js plugin -->
+	<script src="/javascripts/owl.carousel.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#owl-demo").owlCarousel({
 
-<h1><%= title %></h1>
-<p>Welcome to <%= title %></p>
-<a href="/spaces">Your Spaces</a>
+				navigation : true, // Show next and prev buttons
+				slideSpeed : 300,
+				paginationSpeed : 400,
+				singleItem:true
+				// "singleItem:true" is a shortcut for:
+				// items : 1,
+				// itemsDesktop : false,
+				// itemsDesktopSmall : false,
+				// itemsTablet: false,
+				// itemsMobile : false
+			});
+		});
+	</script>
+	<!-- <script src="../../dist/js/bootstrap.min.js"></script> -->
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<!-- <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
+	<p class="center">&#169; Copyright Everyday Spaces 2015</p>
+</div>
