@@ -6,6 +6,7 @@ format.extend(String.prototype);
 
 router.use(function(req, res, next) {
 	res.locals.adminUsername = req.session.admin;
+	res.locals.page = req.url && req.url.replace(/\//g, '_');
 	next();
 });
 

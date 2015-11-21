@@ -44,7 +44,7 @@
 	var script = getScript();
 	var params = getQueryParameters(script.src.replace(/^.*\?/, ''));
 	var spaceId = params.spaceId;
-	var widgetPage = 'http://helpmargery.herokuapp.com/widget/' + spaceId;
+	var widgetPage = '<%= widget_url %>' + spaceId;
 	setTimeout(function(){
 		var tgs = getScript();
 		var iframe = document.createElement('IFRAME');

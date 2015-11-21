@@ -72,7 +72,7 @@ body {
 	-webkit-tap-highlight-color: transparent;
 }
 
-body > div {
+.widget-page > div {
 	display: flex;
 	flex-direction: column;
 	height: 568px;
