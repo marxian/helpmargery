@@ -186,7 +186,18 @@ Login screen
 
 ---------------------------*/
 
+.login {
+	margin: 2em auto;
+}
 
+.login button {
+	width: 90%;
+	margin-top: 1em;
+}
+
+.login img {
+	margin-bottom: 1em;
+}
 
 
 
