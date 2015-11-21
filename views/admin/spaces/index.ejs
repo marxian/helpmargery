@@ -4,7 +4,7 @@
 	<p>Here you can manage your space check your messages and view all bookings</p>
 </div>
 <% _.each(spaces, function(space) { %>
-<div class="admin-item" style="padding: 30px; border: 1px solid black">
+<div class="admin-item">
 	<h2><%= space.name %></h2>
 	<form action="/admin/edit/<%= space.id %>" method="post" enctype="multipart/form-data" style="float: left;">
 		<div class="space">
@@ -95,7 +95,7 @@
 			<input type="hidden" name="owner[name]" value="<%= adminUsername %>" />
 			<input type="hidden" name="owner[email]" value="<%= adminUsername %>@everydayspaces.co.uk" />
 		</fieldset>
-		
+
 		<button type="submit" value="Save">Save</button>
 		</div>
 	</form>
