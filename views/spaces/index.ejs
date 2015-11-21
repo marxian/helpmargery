@@ -1,112 +1,104 @@
-<% layout('home_layout') -%>
+<% layout('admin_layout') -%>
 <script src="/javascripts/thirdparty/isotope.pkgd.min.js"></script>
-<link rel="stylesheet" href="/stylesheets/style.css">
 <style>
-	.grid-item { width: 25%; }
+	.grid-item { 
+		width: 25%; 
+	}
+	.button {
+		background-color: #C5CACD;
+	}
+	.button.is-checked {
+		background-color: #88C6E5;
+	}
+	.filters {
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
 	* {
 	  -webkit-box-sizing: border-box;
 	     -moz-box-sizing: border-box;
 	          box-sizing: border-box;
 	}
-
-	/* ---- button ---- */
-
-	.button {
-	  display: inline-block;
-	  padding: 0.5em 1.0em;
-	  background: #EEE;
-	  border: none;
-	  border-radius: 7px;
-	  background-image: linear-gradient( to bottom, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.2) );
-	  color: #222;
-	  font-family: sans-serif;
-	  font-size: 16px;
-	  text-shadow: 0 1px white;
-	  cursor: pointer;
+	nav {
+		display: none;
+	}
+	.fake-nav {
+		width: 100%;
+		border-style: none;
+		box-shadow: 0px 2px 3px rgb(136, 139, 130);
+		height: 65px;
+	}
+	.fake-nav img {
+		margin-top: 8px;
+		margin-left: 30px;
+	}
+	.fake-splash {
+		background-image: url("/img/Landingpage-club.jpg");
+		width: 100%;
+		height: 300px;
+	}
+	.fake-inputs {
+		background-color: #88C6E5;
+		padding: 25px 5px;
+		font-size: 18px;
+	}
+	.fake-inputs input {
+		height: 35px;	
+		border-radius: 4px;
+		border: none;
+		text-align: center;
+	}
+	.fake-inputs .venue {
+		width: 150px;	
+	}
+	.fake-inputs .date {
+		width: 100px;	
+	}
+	.fake-inputs .number {
+		width: 70px;
+	}
+	.fake-inputs .input-wrapper {
+		width: 750px;
+		margin: 0 auto;
 	}
 
-	.button:hover {
-	  background-color: #8CF;
-	  text-shadow: 0 1px hsla(0, 0%, 100%, 0.5);
-	  color: #222;
-	}
-
-	.button:active,
-	.button.is-checked {
-	  background-color: #28F;
-	}
-
-	.button.is-checked {
-	  color: white;
-	  text-shadow: 0 -1px hsla(0, 0%, 0%, 0.8);
-	}
-
-	.button:active {
-	  box-shadow: inset 0 1px 10px hsla(0, 0%, 0%, 0.8);
-	}
-
-	/* ---- button-group ---- */
-
-	.button-group:after {
-	  content: '';
-	  display: block;
-	  clear: both;
-	}
-
-	.button-group .button {
-	  float: left;
-	  border-radius: 0;
-	  margin-left: 0;
-	  margin-right: 1px;
-	}
-
-	.button-group .button:first-child { border-radius: 0.5em 0 0 0.5em; }
-	.button-group .button:last-child { border-radius: 0 0.5em 0.5em 0; }
-
-	/* ---- isotope ---- */
-
-
-	/* ui group */
-
-	.ui-group {
-	  display: inline-block;
-	}
-
-	.ui-group h3 {
-	  display: inline-block;
-	  vertical-align: top;
-	  line-height: 32px;
-	  margin-right: 0.2em;
-	  font-size: 16px;
-	}
-
-	.ui-group .button-group {
-	  display: inline-block;
-	  margin-right: 20px;
+	.fake-container {
+		width: 750px;	
+		margin: 0 auto;
 	}
 </style>
-<h1><%= title %></h1>
-<div class="filters">
-
-  <div class="ui-group">
-    <h3>Facilities</h3>
-    <div class="button-group js-radio-button-group" data-filter-group="facilites">
-      <button class="button all is-checked" data-filter="">any</button>
-      <% _.each(facilities, function(f){ %>
-      	<button class="button" data-filter=".<%= f.replace(' ', '_') %>"><%= f %></button>
-      <% }) %>
-    </div>
-  </div>
+<div class="fake-nav">
+	<img src="/img/Everyday-spaces.png" />
 </div>
-<div class="grid">
-	<% _.each(spaces, function(space) { %>
- 		<div class="grid-item <%= _.map(space.facilities, function(f){ return f.replace(' ', '_'); }).join(' ') %>">
-	 		<script
-				type="text/javascript"
-				src="/widget/sabot.js?spaceId=<%= space.id %>"
-				async="true"></script>
+<div class="fake-splash"></div>
+<div class="fake-inputs">
+	<div class="input-wrapper">
+		I want to book <input placeholder="venue or location" class="venue" /> 
+		on or around <input placeholder="dd/mm/yyyy" class="date" />
+		for <input placeholder="number" class="number" /> people
+	</div>
+</div>
+<div class="fake-container">
+	<div class="filters">
+	  <div class="ui-group">
+		<div class="button-group js-radio-button-group" data-filter-group="facilites">
+		  <button class="button all is-checked" data-filter="">any</button>
+		  <% _.each(facilities, function(f){ %>
+			<button class="button" data-filter=".<%= f.replace(' ', '_') %>"><%= f %></button>
+		  <% }) %>
 		</div>
- 	<% }) %>
+	  </div>
+	</div>
+	<div class="grid">
+		<% _.each(spaces, function(space) { %>
+			<div class="grid-item <%= _.map(space.facilities, function(f){ return f.replace(' ', '_'); }).join(' ') %>">
+				<script
+					type="text/javascript"
+					src="/widget/sabot.js?spaceId=<%= space.id %>"
+					async="true"></script>
+			</div>
+		<% }) %>
+	</div>
 </div>
 <script>
 	var $grid = $('.grid').isotope({
