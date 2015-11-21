@@ -263,6 +263,10 @@ Login screen
 	margin-top: 0.5em;
 }
 
+.hljs {
+	width: 280px;
+}
+
 .space textarea,
 .space input,
 .space select {
