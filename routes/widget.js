@@ -16,7 +16,7 @@ router.get('/sabot.js', function(req, res, next){
 	});
 });
 
-/* GET home page. */
+
 router.get('/:id', function(req, res, next) {
 	models.Space.findOne({_id: req.params.id}, function(err, space) {
 		if (err) {
