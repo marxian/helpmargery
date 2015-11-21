@@ -93,20 +93,20 @@
 			<% if (updateSpace.image && typeof updateSpace.image === 'object' && updateSpace.image.buffer && updateSpace.image.mimetype) { %>
 				var image = 'data:<%= updateSpace.image.mimetype %>;base64,<%= updateSpace.image.buffer.toString('base64') -%>';
 
-				$('.image-form-item').before('<img width=370 height=370 title="current image" src="' + image + '" />');
+				$('.image-form-item').before('<img width="370" height="370" title="current image" src="' + image + '" />');
 			<% } %>
 
 			var $form = $('#for-js-hackery');
 
 			$form
-				.attr('action', '/edit/<%= updateSpace._id %>');
+				.attr('action', '/admin/edit/<%= updateSpace._id %>');
 
 			_.forEach(space, function(val, key) {
 				var $el = $form.find(':input[name=' + key + ']');
 				switch(typeof val) {
 					case 'string':
 					case 'object':
-						if( val && $el.length ) {
+						if( val && $el.length && key !== 'image' ) {
 							$el.val(val);
 						}
 						break;

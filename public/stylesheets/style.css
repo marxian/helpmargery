@@ -72,7 +72,11 @@ body {
 	-webkit-tap-highlight-color: transparent;
 }
 
-body > div {
+#widget {
+	height: 100%;
+}
+
+.widget-page {
 	display: flex;
 	flex-direction: column;
 	height: 568px;
@@ -103,7 +107,7 @@ img {
 
 button {
 	border: 0;
-	border-radius: 15px;
+	border-radius: 0;
 	padding: 10px 12px;
 	cursor: pointer;
 	color: #fff;
@@ -138,6 +142,7 @@ label {
 
 .top button {
 	width: 44px;
+	border-radius: 0;
 }
 
 .goto {
@@ -176,19 +181,6 @@ label {
 	float: right;
 	margin-top: 0;
 }
-
-
-
-
-/*---------------------------------------------------
-
-Login screen
-
----------------------------*/
-
-
-
-
 
 /* ----------------------------------------------- */
 
@@ -316,13 +308,12 @@ Login screen
 
 .th > span:last-child,
 .hour > div:last-child {
-	margin-right: 0
-
+	margin-right: 0;
 }
 
 /* Anthony */
 /* sorry */
-body {
+body[class^="_admin_"] {
 	/* I padded this 30px more than i need to
 	 * I did this because I tried to make the content container margin: 0 auto;
 	 * but instead it just looked really broken because of my complete lack of understanding
@@ -372,23 +363,29 @@ body {
 .left-navigation:hover img.profile {
 	animation: growless 0.5s normal forwards;
 }
+.ln-image-wrapper {
+	height: 100px;
+}
 .left-navigation:hover .logo {
 	/* this needs animating, it appears too uqickly */
 	width: 140px;
 }
 .left-navigation li {
-	margin-bottom: 20%;
-	padding: 0px 5px 10px 0px;
+	padding: 0 1em 0 0;
 	text-align: right;
 	border-bottom-style: solid;
 	border-bottom-color: #8D8D8D;
 	border-bottom-width: 1px;
 	cursor: pointer;
-	width: 100%;
+	box-sizing: border-box;
+	display: flex;
+	height: 50px;
 }
 /* http://stackoverflow.com/questions/6868009 */
 .left-navigation a:link {
 	text-decoration: inherit;
+    align-self: center;
+    white-space: nowrap;
 	color: inherit;
 	cursor: auto;
 }
