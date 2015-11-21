@@ -20,19 +20,19 @@
 			</div>
 			<p><%= space.owner.name %></p>
 			<div class="buttons">
-				<button data-goto="description">Description</button>
+				<button data-goto="description">Find out more</button>
 				<button style="margin-top: 5px;" data-goto="availability" class="availability">Check Availability</button>
 			</div>
 		</div>
 	</div>
 
-	<!-- Description -->
+	<!-- Find out more -->
 	<div class="goto description hide">
-		<div class="top">
+		<div style="overflow: hidden;" class="top">
 			<button data-goto="about">&lt;</button>
 			<h1>Description</h1>
 		</div>
-		<div class="vcenter" style="padding: 10px;">
+		<div class="vcenter" style="padding: 10px; position: relative;">
 			<p class="description"><%= space.description %></p>
 
 			<% if (space.hiring_model === 'Deposit') { %>
@@ -65,12 +65,15 @@
 					<%= space.postcode %><br/>
 				<% } %>
 			<% } %>
+			<div style="position: absolute;" class="buttons">
+				<button data-goto="availability" class="availability">Check Availability</button>
+			</div>
 		</div>
 	</div>
 
 	<!-- Availability -->
 	<div class="goto availability hide">
-		<div class="top">
+		<div style="overflow: hidden;" class="top">
 			<button data-goto="about">&lt;</button>
 			<h1>Availability</h1>
 		</div>
@@ -82,7 +85,7 @@
 
 	<!-- Book -->
 	<div class="goto book hide">
-		<div class="top">
+		<div style="overflow: hidden;" class="top">
 			<button data-goto="availability">&lt;</button>
 			<h1>Book</h1>
 		</div>

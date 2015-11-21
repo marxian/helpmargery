@@ -295,6 +295,12 @@ Login screen
 	padding: 0.7em;
 }
 
+.widget-page .goto.descripton {
+	position: absolute;
+    bottom: 70px;
+    width: 91%;
+}
+
 .goto.book form {
 	display: flex;
 	flex-direction: column;
