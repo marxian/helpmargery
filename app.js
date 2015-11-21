@@ -43,6 +43,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(function(req, res, next){
   res.locals.adminUsername = req.session.admin;
   res.locals.page = req.url && req.url.replace(/\//g, '_');
+  res.locals.realpage = req.url;
   next();
 });
 app.use('/', routes);

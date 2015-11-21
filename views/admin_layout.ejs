@@ -42,6 +42,18 @@
 				$('li .close').click(function() {
 					$(this).parent('li').hide();
 				});
+				var currentRoute = "<%= realpage %>";
+				$('.left-navigation li').each(function(key, element) {
+					var $el = $(element);
+					var routes = $el.attr('data-matches');	
+					if(routes) { 
+						_.each(routes.split('|'), function(val) {
+							if(val == currentRoute) {
+								$el.addClass('selected');
+							}
+						});
+					}
+				});
 			});
 		</script>
 		<%- body -%>
@@ -50,8 +62,8 @@
 			<p class="username"><%= adminUsername %></p>
 			<ul class="controls">
 				<li><a href="/admin/spaces"><i class="fa fa-home"></i><span>Home</span></a></li>	
-				<li><a href="/admin/new"><i class="fa fa-plus-square-o"></i><span>Add a Space</span></a></li>	
-				<li><a href="/admin/spaces"><i class="fa fa-clone"></i><span>Your Spaces</span></a></li>	
+				<li data-matches="/admin/new"><a href="/admin/new"><i class="fa fa-plus-square-o"></i><span>Add a Space</span></a></li>	
+				<li data-matches="/admin/spaces"><a href="/admin/spaces"><i class="fa fa-clone"></i><span>Your Spaces</span></a></li>	
 				<li><a href="/admin/spaces"><i class="fa fa-envelope"></i><span>Messages</span></a></li>	
 				<li><a href="/admin/spaces"><i class="fa fa-wrench"></i><span>Settings</span></a></li>	
 				<li><a href="/logout"><i class="fa fa-power-off"></i><span>Logout</span></a></li>	
