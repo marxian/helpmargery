@@ -1,6 +1,11 @@
 <% layout('admin_layout') -%>
+<% _.each(spaces, function(space) { %>
+	<div class="create-header">
 
-	<% _.each(spaces, function(space) { %>
+		<h1>Welcome back</h1>
+		<!--<h1><%= title %></h1>-->
+		<p>Here you can manage your space check your messages and view all bookings</p>
+	</div>
 		<form action="/admin/edit/<%= space.id %>" method="post" enctype="multipart/form-data" style="float: left;">
 			<div class="space">
 
