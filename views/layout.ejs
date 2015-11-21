@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title><%= (title || '') + 'Everyday Spaces' %></title>
+		<title><%= (this.title && (this.title + ' | ') || '') + 'Everyday Spaces' %></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+		<link rel="stylesheet" href="/stylesheets/chosen.css" />
+		<link rel="stylesheet" href="/fa/css/font-awesome.min.css">
 		<link rel="stylesheet" href="/stylesheets/style.css" />
 		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
 		<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
@@ -25,9 +27,11 @@
 		<script type="text/javascript" src="/javascripts/thirdparty/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript" src="/javascripts/thirdparty/mithril.js"></script>
 		<script type="text/javascript" src="/javascripts/thirdparty/lodash.js"></script>
+		<script type="text/javascript" src="/javascripts/thirdparty/chosen.jquery.js"></script>
+		<script type="text/javascript" src="/javascripts/thirdparty/chosen.proto.js"></script>
 	</head>
-	<body>
-		<h1>Welcome back <%= adminUsername %></h1>
+	<body class="<%= page %>-page">
+		<h1>Welcome back <%= adminUsername || '' %></h1>
 		<% if(_.size(messages) > 0) { %>
 			<ul>
 				<% _.each(messages, function(message, category) { %>
@@ -36,5 +40,16 @@
 			</ul>
 		<% } %>
 		<%- body -%>
+		<nav class="left-navigation faded-border">
+			<img src="/img/smallmargy.png" class="profile">
+			<ul class="controls">
+				<li><a href="/spaces"><i class="fa fa-home"></i><span>Home</span></a></li>	
+				<li><a href="/spaces"><i class="fa fa-clone"></i><span>Your Spaces</span></a></li>	
+				<li><a href="/spaces"><i class="fa fa-envelope"></i><span>Messages</span></a></li>	
+				<li><a href="/spaces"><i class="fa fa-wrench"></i><span>Settings</span></a></li>	
+				<li><a href="/"><i class="fa fa-power-off"></i><span>Logout</span></a></li>	
+			</ul>
+			<div class="logo"></div>
+		</nav>
 	</body>
 </html>

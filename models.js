@@ -44,7 +44,11 @@ var Booking = models.Booking = mongoose.model('Booking', bookingSchema);
 var spaceSchema = new Schema({
 	name: String,
 	description: String,
-	image: Buffer,
+	image: {
+		buffer: Buffer,
+		mimetype: String,
+		originalname: String
+	},
 	facilities: { type: [String], enum: facilityTypes },
 	bookings: [bookingSchema],
 	address1: String,

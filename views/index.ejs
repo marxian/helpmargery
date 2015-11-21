@@ -7,6 +7,7 @@
 				<a class="nav-links" href="#sharer">I have space</a>
 				<a class="nav-links" href="#meetm"> Meet the sharers</a>
 				<a class="nav-links" href="#looker">I want space</a>
+				<a class="nav-links" href="/login">Login</a>
 			</div>
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -16,10 +17,8 @@
 					<span class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="#"></a>
-
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
-
 			</div><!--/.nav-collapse -->
 		</div>
 	</nav>
@@ -114,27 +113,24 @@
 	</div>
 	<!-- Bootstrap core JavaScript
 	================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<!-- Include js plugin -->
 	<script src="/javascripts/owl.carousel.js"></script>
 	<script>
-	$(document).ready(function() {
+		$(document).ready(function() {
+			$("#owl-demo").owlCarousel({
 
-		$("#owl-demo").owlCarousel({
-
-			navigation : true, // Show next and prev buttons
-			slideSpeed : 300,
-			paginationSpeed : 400,
-			singleItem:true
-			// "singleItem:true" is a shortcut for:
-			// items : 1,
-			// itemsDesktop : false,
-			// itemsDesktopSmall : false,
-			// itemsTablet: false,
-			// itemsMobile : false
+				navigation : true, // Show next and prev buttons
+				slideSpeed : 300,
+				paginationSpeed : 400,
+				singleItem:true
+				// "singleItem:true" is a shortcut for:
+				// items : 1,
+				// itemsDesktop : false,
+				// itemsDesktopSmall : false,
+				// itemsTablet: false,
+				// itemsMobile : false
+			});
 		});
-	});
 	</script>
 	<!-- <script src="../../dist/js/bootstrap.min.js"></script> -->
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->

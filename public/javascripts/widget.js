@@ -29,5 +29,28 @@
 			}
 		});
 
+
+
+
+		var hours = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23];
+
+		$.each(space.bookings, function( booking ) {
+			var period = moment.range(moment(booking.start), moment(booking.end));
+
+			$.each(hours, function( hour ) {
+				// if( moment().hours(hour).within(period) ) {
+				// 	console.log(moment().hours(hour));
+				// }
+			});
+		});
+
+		$('.week-prev').on('click', function() {
+			// moment
+		});
+
+		$('.week-next').on('click', function() {
+			// 
+		});
+
 	});
 })(jQuery);

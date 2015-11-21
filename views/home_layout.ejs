@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title><%= title ? title : 'Everyday Spaces' %></title>
+		<title><%= (this.title && (this.title + ' | ') || '') + 'Everyday Spaces' %></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
 		<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
@@ -22,14 +22,13 @@
 		<meta name="msapplication-TileImage" content="/mstile-144x144.png">
 		<meta name="theme-color" content="#ffffff">
 		<script type="text/javascript" src="/javascripts/thirdparty/jquery-2.1.4.min.js"></script>
-
 		<link href='https://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
 		<link href="/stylesheets/bootstrap.css" rel="stylesheet">
     	<link href="/stylesheets/cover.css" rel="stylesheet">
 		<link rel="stylesheet" href="/stylesheets/owl.carousel.css">
 		<link rel="stylesheet" href="/stylesheets/owl.theme.css">
 	</head>
-	<body>
+	<body class="home-page">
 		<% if(_.size(messages) > 0) { %>
 			<ul>
 				<% _.each(messages, function(message, category) { %>
