@@ -223,6 +223,9 @@ Login screen
 	margin-top: 1em;
 }
 
+.space {
+	width: 360px;
+}
 
 .space button {
 	width: 100%;
@@ -230,25 +233,37 @@ Login screen
 }
 
 .space label {
-	text-align: left;
+	float: left;
 	padding: 0.5em 0 0 1em;
+	margin-top: 0.5em;
 }
 
 .space textarea,
-.space input {
-	width: 90%;
+.space input,
+.space select {
+	float: right;
+	border-radius: 5px;
+	background: #c5cacb;
+	margin: 0.5em 0 0 1em;
+	padding: 0.7em;
+	width: 52%;
 }
 
+textarea, input, select {
+	outline: none;
+	border: 0px;
+ }
+
+
+
 #hiring_charge,
-select
+.space select
  {
-	width: 40%;
-	float: left;
-	margin-left: 1em;
+	background: #88c6e5;
 }
 
 #facilities {
-	float: left;
+	float: right;
 	display: block;
 }
 
