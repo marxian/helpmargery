@@ -90,16 +90,18 @@
 				<input type="hidden" name="owner[name]" value="<%= adminUsername %>" />
 				<input type="hidden" name="owner[email]" value="<%= adminUsername %>@everydayspaces.co.uk" />
 			</fieldset>
+			<div class="embed-widget">
 			<p>Embed your widget</p>
 			<p>Paste the below code into your website</p>
 			<pre>
 			&#x3C;script type=&#x22;text/javascript&#x22; src=&#x22;http://everydayspaces.co.uk/widget/sabot.js?spaceId=<%= space.id %> async=&#x22;true&#x22;&#x3E;&#x3C;/script&#x3E;
 			</pre>
+		</div>
 			<button type="submit" value="Save">Save</button>
 		</form>
 
  		<div style="float: left;" class="widget <%= _.map(space.facilities, function(f){ return f.replace(' ', '_'); }).join(' ') %>">
- 			
+
 	 		<script
 				type="text/javascript"
 				src="/widget/sabot.js?spaceId=<%= space.id %>"
