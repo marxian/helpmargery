@@ -141,6 +141,7 @@ label {
 
 .top button {
 	width: 44px;
+	border-radius: 0;
 }
 
 .goto {
@@ -161,9 +162,19 @@ label {
 .footer {
 	justify-content: flex-end;
 	position: relative;
-	padding: 10px;
-	background-color: #c5cacb; /* Lighter */
+	background: #fff url('../img/Everyday-spaces.png') no-repeat right 10px center;
+	text-align: left;
+	background-size: 85px auto;
+	box-sizing: border-box;
+	max-width: 320px;
 	height: 44px;
+}
+
+.footer a {
+	padding: 10px;
+	display: block;
+	text-decoration: none;
+	color: inherit;
 }
 
 /* ---------------------------------------------
@@ -521,7 +532,7 @@ body[class^="_admin_"] {
 	display: inline;
 }
 .left-navigation li.selected {
-	background-color: #88c6e5;
+	background-color: #931b26;
 }
 .left-navigation li.selected:hover, .left-navigation li.selected .fa, .left-navigation li.selected span {
 	color:white;

@@ -97,9 +97,12 @@
 			<div class="embed-widget">
 			<p>Embed your widget</p>
 			<p>Paste the below code into your website</p>
-			<pre>
-			&#x3C;script type=&#x22;text/javascript&#x22; src=&#x22;http://everydayspaces.co.uk/widget/sabot.js?spaceId=<%= space.id %> async=&#x22;true&#x22;&#x3E;&#x3C;/script&#x3E;
-			</pre>
+			<pre><code class="html">&#x3C;script type=&#x22;text/javascript&#x22; src=&#x22;http://everydayspaces.co.uk/widget/sabot.js?spaceId=<%= space.id %> async=&#x22;true&#x22;&#x3E;&#x3C;/script&#x3E;</code></pre>
+			<script>$(document).ready(function() {
+				$('pre code').each(function(i, block) {
+					hljs.highlightBlock(block);
+				});
+			});</script>
 		</div>
 			<button type="submit" value="Save">Save</button>
 		</form>
