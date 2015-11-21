@@ -42,12 +42,10 @@ var bookedSegments = [];
 
 <div class="date-controls">
 	<table>
-		<td>
-			<tr><button class="week-prev">&lt;</button></tr>
-			<tr><button class="week-next">&gt;</button></tr>
-			<% var endOfweek = currentWeek.clone().add(6, 'days'); %>
-			<tr><span><%= currentWeek.format('DD') %> &mdash; <%= endOfweek.format('DD') %> <%= endOfweek.format('MMMM') %> <%= endOfweek.format('YYYY') %></span></tr>
-		</td>
+		<tr><button class="week-prev">&lt;</button></tr>
+		<tr><button class="week-next">&gt;</button></tr>
+		<% var endOfweek = currentWeek.clone().add(6, 'days'); %>
+		<tr><span><%= currentWeek.format('DD') %> &mdash; <%= endOfweek.format('DD') %> <%= endOfweek.format('MMMM') %> <%= endOfweek.format('YYYY') %></span></tr>
 	</table>
 </div>
 

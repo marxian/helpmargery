@@ -1,0 +1,20 @@
+{
+    "name": "helpmargery - Kirby Bedon",
+    "version": "0.1",
+    "manifest_version": 2,
+    "description": "Add a helpmargey widget to Kirby Bedon",
+    "content_scripts": [
+        {
+            "matches": [
+                "http://www.anglicanchurch.org.uk/index.php*"
+            ],
+            "all_frames": true,
+            "run_at": "document_end",
+            "css": [],
+            "js": [
+            	"jquery.js",
+                "embederator.js"
+            ]
+        }
+    ]
+}
