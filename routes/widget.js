@@ -5,7 +5,7 @@ var models = require('../models');
 
 router.get('/sabot.js', function(req, res, next){
 	res.set('Content-Type', 'text/javascript');
-	var spaceId = req.query.id;
+	var spaceId = req.query.spaceId;
 	models.Space.findOne({_id: spaceId}, function(err, space) {
 		if (!space) {
 			err = 'Space missing space';
