@@ -13,7 +13,7 @@ router.use(function(req, res, next) {
 
 router.get('/login', function(req, res, next) {
 	if (req.session.admin) {
-		res.redirect('/spaces');
+		res.redirect('/admin/spaces');
 	} else {
 		res.render('login', {
 			title: 'Login',
@@ -23,7 +23,7 @@ router.get('/login', function(req, res, next) {
 
 router.post('/login', function(req, res, next) {
 	req.session.admin = req.body.username;
-	res.redirect('/spaces');
+	res.redirect('/admin/spaces');
 });
 
 module.exports = router;
