@@ -8,7 +8,7 @@ router.get('/sabot.js', function(req, res, next){
 	var spaceId = req.query.spaceId;
 	models.Space.findOne({_id: spaceId}, function(err, space) {
 		if (!space) {
-			err = 'Space missing space';
+			err = new Error('Space not found');
 		}
 		if (err) {
 			console.log(err);
@@ -26,7 +26,7 @@ router.get('/sabot.js', function(req, res, next){
 router.get('/:id', function(req, res, next) {
 	models.Space.findOne({_id: req.params.id}, function(err, space) {
 		if (!space) {
-			err = 'Space missing';
+			err = new Error('Space not found');
 		}
 		if (err) {
 			console.log(err);
@@ -43,7 +43,7 @@ router.get('/:id', function(req, res, next) {
 router.post('/:id/book', function(req, res, next) {
 	models.Space.findOne({_id: req.params.id}, function(err, space) {
 		if (!space) {
-			err = 'Space missing';
+			err = new Error('Space not found');
 		}
 		if (err) {
 			console.log(err);

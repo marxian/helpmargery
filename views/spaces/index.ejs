@@ -6,7 +6,11 @@
 <% _.each(spaces, function(space) { %>
 	<article>
 		<h2><%= space.name %></h2>
+		<a href="/edit/<%= space._id %>">Edit Space</a>
 		<a href="/space/<%= space._id %>">View Space</a>
+		<% if (space.image && typeof space.image === 'object' && space.image.buffer && space.image.mimetype) { %>
+			<img width=370 height=370 src="data:<%= space.image.mimetype %>;base64,<%= space.image.buffer.toString('base64') -%>" alt="venue photo">
+		<% } %>
 		<% if(space.address1 || space.address2 || space.county || space.postcode) { %>
 			<address>
 				<ul>

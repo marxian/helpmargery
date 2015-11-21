@@ -17,7 +17,9 @@
 			</ul>
 
 			<div class="pictures">
-				<img src="http://placehold.it/370x370" alt="venue photo">
+				<% if (space.image && typeof space.image === 'object' && space.image.buffer && space.image.mimetype) { %>
+					<img width="370" height="370" src="data:<%= space.image.mimetype %>;base64,<%= space.image.buffer.toString('base64') -%>" alt="venue photo">
+				<% } %>
 			</div>
 
 			<button data-goto="availability">Check Availability</button>
