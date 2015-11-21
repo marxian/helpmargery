@@ -29,8 +29,8 @@
 		<script type="text/javascript" src="/javascripts/thirdparty/chosen.jquery.js"></script>
 		<script type="text/javascript" src="/javascripts/thirdparty/chosen.proto.js"></script>
 	</head>
-	<body>
-		<h1>Welcome back <%= adminUsername %></h1>
+	<body class="<%= page %>-page">
+		<h1>Welcome back <%= adminUsername || '' %></h1>
 		<% if(_.size(messages) > 0) { %>
 			<ul>
 				<% _.each(messages, function(message, category) { %>
