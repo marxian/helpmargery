@@ -527,7 +527,7 @@ body[class^="_admin_"] {
 	display: inline;
 }
 .left-navigation li.selected {
-	background-color: #88c6e5;
+	background-color: #931b26;
 }
 .left-navigation li.selected:hover, .left-navigation li.selected .fa, .left-navigation li.selected span {
 	color:white;
