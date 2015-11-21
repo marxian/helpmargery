@@ -6,8 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var _ = require('lodash');
 var moment = require('moment');
-var range = require('moment-range');
-var momentDurationFormat = require('moment-duration-format');
+require('moment-range');
+require('moment-duration-format');
 // this middleware allows exposing flash messages through an express session (cookies!)
 var flash = require('express-flash');
 var session = require('express-session');
@@ -25,8 +25,6 @@ app.set('view engine', 'ejs');
 app.locals._ = _;
 // inject moment into ejs
 app.locals.moment = moment;
-app.locals.range = range;
-app.locals.momentDurationFormat = momentDurationFormat;
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));

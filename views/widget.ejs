@@ -44,11 +44,20 @@
 		</div>
 		<div class="vcenter">
 			<form method="POST" action="<%= space._id %>/book">
-				<label>From: <input name="start" value="2015-12-20T00:00:00.025Z" /></label>
-				<label>To: <input name="end" value="2015-11-20T16:01:10.025Z" /></label>
-				<label>Owner name <input name="owner[name]" value="Alison" /></label>
-				<label>Owner email <input name="owner[email]" value="Alison@danceclassesrus.com" /></label>
-				<label>Booker: <input name="booker[name]" value="Dance classes r us" /></label>
+				<label for="start">From:</label>
+				<input name="start" value="2015-12-20T00:00:00.025Z" />
+
+				<label for="end">To</label>
+				<input name="end" value="2015-11-20T16:01:10.025Z" />
+
+				<label for="owner[name]">Owner name</label>
+				<input name="owner[name]" value="Alison" />
+
+				<label for="owner[email]">Owner email</label>
+				<input name="owner[email]" value="Alison@danceclassesrus.com" />
+
+				<label for="booker[name]">Booker</label>
+				<input name="booker[name]" value="Dance classes r us" />
 
 				<div>
 					<button type="submit">Create booking</button>
