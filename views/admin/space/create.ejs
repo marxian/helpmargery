@@ -1,7 +1,14 @@
 <% layout('admin_layout') -%>
+<div class="create-header">
 
-<div class="goto create wrapper space">
-	<h1><%= title %></h1>
+	<h1>Welcome back</h1>
+	<!--<h1><%= title %></h1>-->
+	<p>Here you can add your space check your messages and view all bookings</p>
+</div>
+	<div class="goto create wrapper space">
+	<div class="fill-in">
+	<p>To add a new place fill in the form below</p>
+</div>
 	<form id="for-js-hackery" action="/admin/new" method="post" enctype="multipart/form-data">
 		<fieldset>
 			<div class="vcenter">
