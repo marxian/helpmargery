@@ -2,8 +2,7 @@
 <% _.each(spaces, function(space) { %>
 	<div class="create-header">
 
-		<h1>Welcome back</h1>
-		<!--<h1><%= title %></h1>-->
+		<h1><%= title %></h1>
 		<p>Here you can manage your space check your messages and view all bookings</p>
 	</div>
 		<form action="/admin/edit/<%= space.id %>" method="post" enctype="multipart/form-data" style="float: left;">
@@ -22,8 +21,7 @@
 						<textarea id="description" name="description"><%= space.description || '' %></textarea>
 					</div>
 
-					<div class="form-item">
-						<label for="facilities">Facilites</label>
+					<div class="form-item form-facilities">
 						<select id="facilities" data-placeholder="Select the facilities available" name="facilities" multiple="true">
 							<% facilities.forEach(function(f){ %>
 							<option value="<%= f %>" <%= _.contains(space.facilities, f) ? 'selected' : '' %>><%= f %></option>
@@ -33,7 +31,7 @@
 					<!-- Sorry -->
 					<script>
 						$(document).ready(function() {
-							$('#facilities').chosen();
+							$('#facilities').chosen({width: "345px"});
 						});
 					</script>
 
