@@ -81,6 +81,7 @@ body {
 	text-align: center;
 	line-height: 1.5;
 	background-color: #f3f4f5; /* Very light */
+	border-radius: 10px;
 }
 
 
@@ -284,8 +285,35 @@ Login screen
 	width: 52%;
 }
 
+.widget-page .goto.book input,
+.widget-page .goto.book textarea,
+.widget-page .goto.book select {
+	border-radius: 5px;
+	background: #c5cacb;
+	margin: 0.5em 0 0 1em;
+	padding: 0.7em;
+}
+
+.goto.book form {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+.goto.book .buttons {
+	justify-content: end;
+}
+
+.widget-page .top {
+	border-radius: 10px 10px 0 0;
+}
+
+.widget-page .footer,
+.widget-page .footer a {
+	border-radius: 0 0 10px 10px;
+}
+
 .admin-item {
-padding: 30px;
+	padding: 30px;
 }
 
 textarea, input, select {
@@ -585,4 +613,8 @@ ul.messages {
 
 .form-item.form-facilities {
 	margin: 15px 0;
+}
+
+.widgetimg {
+	max-width: 90%;
 }

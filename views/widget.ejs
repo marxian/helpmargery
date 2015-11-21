@@ -8,21 +8,20 @@
 			<h1><%= space.name %></h1>
 		</div>
 		<div class="vcenter">
-			<div class="buttons">
-				<button data-goto="description">Description</button>
-			</div>
-			<div style="min-height: 335px;" class="pictures">
+			<% if (space.hire_charge && space.hiring_granularity)  { %>
+				<p style="margin: 0;" class="hire_charge">
+					&pound;<%= space.hire_charge %> <%= space.hiring_granularity %>
+				</p>
+			<% } %>
+			<div style="min-height: 300px; max-height: 320px" class="pictures">
 				<% if (space.image && typeof space.image === 'object' && space.image.buffer && space.image.mimetype) { %>
-					<img src="data:<%= space.image.mimetype %>;base64,<%= space.image.buffer.toString('base64') -%>" alt="venue photo">
+					<img class="widgetimg" src="data:<%= space.image.mimetype %>;base64,<%= space.image.buffer.toString('base64') -%>" alt="venue photo">
 				<% } %>
 			</div>
-			<% if (space.hire_charge && space.hiring_granularity)  { %>
-			<p class="hire_charge">
-			&pound;<%= space.hire_charge %> <%= space.hiring_granularity %>
-			</p>
-			<% } %>
+			<p><%= space.owner.name %></p>
 			<div class="buttons">
-				<button data-goto="availability" class="availability">Check Availability</button>
+				<button data-goto="description">Description</button>
+				<button style="margin-top: 5px;" data-goto="availability" class="availability">Check Availability</button>
 			</div>
 		</div>
 	</div>
@@ -89,26 +88,28 @@
 		</div>
 		<div class="vcenter">
 			<form method="POST" action="<%= space._id %>/book">
+
 				<input type="hidden" name="start" value="" />
 				<input type="hidden" name="end" value="" />
 
-				<label for="owner[name]">Your name</label>
-				<input required="required" name="owner[name]" value="" />
+				<div class="form-item">
+					<label for="owner[name]">Your name</label>
+					<input required="required" name="owner[name]" value="" />
+				</div>
 
-				<label for="owner[email]">Your email</label>
-				<input required="required" name="owner[email]" value="" />
+				<div class="form-item">
+					<label for="owner[email]">Your email</label>
+					<input required="required" name="owner[email]" value="" />
+				</div>
 
 				<input type="hidden" name="booker[name]" value="booked with widget" />
 
-				<div>
+				<div style="margin-top: 302px;" class="buttons">
 					<button type="submit">Create booking</button>
 				</div>
 			</form>
 		</div>
 	</div>
-
-
-
 </div>
 <% if (!unbranded) { %>
 	<div class="footer">
