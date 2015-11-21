@@ -47,8 +47,8 @@
 				var currentRoute = "<%= realpage %>";
 				$('.left-navigation li').each(function(key, element) {
 					var $el = $(element);
-					var routes = $el.attr('data-matches');	
-					if(routes) { 
+					var routes = $el.attr('data-matches');
+					if(routes) {
 						_.each(routes.split('|'), function(val) {
 							if(val == currentRoute) {
 								$el.addClass('selected');
@@ -63,13 +63,13 @@
 			<div class="ln-image-wrapper"><img src="/img/smallmargy.png" class="profile"></div>
 			<p class="username"><%= adminUsername %></p>
 			<ul class="controls">
-				<li data-matches="/admin/spaces"><a href="/admin/spaces"><i class="fa fa-clone"></i><span>Your Spaces</span></a></li>	
-				<li data-matches="/admin/new"><a href="/admin/new"><i class="fa fa-plus-square-o"></i><span>Add a Space</span></a></li>	
-				<li><a href="/admin/spaces"><i class="fa fa-envelope"></i><span>Messages</span></a></li>	
-				<li><a href="/admin/spaces"><i class="fa fa-wrench"></i><span>Settings</span></a></li>	
-				<li><a href="/logout"><i class="fa fa-power-off"></i><span>Logout</span></a></li>	
+				<li data-matches="/admin/spaces"><a href="/admin/spaces"><i class="fa fa-clone"></i><span>Your Spaces</span></a></li>
+				<li data-matches="/admin/new"><a href="/admin/new"><i class="fa fa-plus-square-o"></i><span>Add a Space</span></a></li>
+				<li><a href="/admin/spaces"><i class="fa fa-envelope"></i><span>Messages</span></a></li>
+				<li><a href="/admin/spaces"><i class="fa fa-wrench"></i><span>Settings</span></a></li>
+				<li><a href="/logout"><i class="fa fa-power-off"></i><span>Logout</span></a></li>
 			</ul>
-			<div class="logo"></div>
+			<a href="http://everydayspaces.co.uk"><div class="logo"></div></a>
 		</nav>
 	</body>
 </html>
