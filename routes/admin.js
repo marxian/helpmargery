@@ -20,7 +20,9 @@ router.get('/spaces', function(req, res, next) {
 		res.render('admin/spaces/index', {
 			title: 'All your spaces belong to us',
 			spaces: spaces,
-			facilities: models.Space.schema.path('facilities').options.enum
+			facilities: models.Space.schema.path('facilities').options.enum,
+			hiring_models: models.Space.schema.path('hiring_model').options.enum,
+			hiring_granularity: models.Space.schema.path('hiring_granularity').options.enum
 		});
 	});
 });
@@ -48,7 +50,7 @@ router.post('/new', uploader.single('image'), function(req, res, next) {
 			next(err);
 		} else {
 			req.flash('success', 'Your new space: {name} has been created.'.format(space));
-			res.redirect('admin/spaces');
+			res.redirect('/admin/spaces');
 		}
 	});
 });
@@ -63,7 +65,7 @@ router.get('/edit/:id', function(req, res, next) {
 			next(err);
 		} else {
 			res.render('admin/space/create', {
-				title: 'Create a new Space',
+				title: 'Edit ' + space.name,
 				facilities: models.Space.schema.path('facilities').options.enum,
 				hiring_models: models.Space.schema.path('hiring_model').options.enum,
 				hiring_granularity: models.Space.schema.path('hiring_granularity').options.enum,
