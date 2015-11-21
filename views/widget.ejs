@@ -8,6 +8,26 @@
 			<h1><%= space.name %></h1>
 		</div>
 		<div class="vcenter">
+			<div class="pictures">
+				<% if (space.image && typeof space.image === 'object' && space.image.buffer && space.image.mimetype) { %>
+					<img width="370" height="370" src="data:<%= space.image.mimetype %>;base64,<%= space.image.buffer.toString('base64') -%>" alt="venue photo">
+				<% } %>
+			</div>
+
+			<div class="buttons">
+				<button data-goto="description">Description</button>
+				<button data-goto="availability" class="availability">Check Availability</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- Description -->
+	<div class="goto description hide">
+		<div class="top">
+			<button data-goto="about">&lt;</button>
+			<h1>Description</h1>
+		</div>
+		<div class="vcenter" style="padding: 10px;">
 			<p class="description"><%- space.description -%></p>
 
 			<ul class="facilities">
@@ -15,14 +35,6 @@
 				<li>Wifi</li>
 				<li>Free Parking</li>
 			</ul>
-
-			<div class="pictures">
-				<% if (space.image && typeof space.image === 'object' && space.image.buffer && space.image.mimetype) { %>
-					<img width="370" height="370" src="data:<%= space.image.mimetype %>;base64,<%= space.image.buffer.toString('base64') -%>" alt="venue photo">
-				<% } %>
-			</div>
-
-			<button data-goto="availability">Check Availability</button>
 		</div>
 	</div>
 
