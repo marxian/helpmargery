@@ -15,7 +15,7 @@
 			</div>
 			<% if (space.hire_charge && space.hiring_granularity)  { %>
 			<p class="hire_charge">
-			£<%= space.hire_charge %> <%= space.hiring_granularity %>
+			&pound;<%= space.hire_charge %> <%= space.hiring_granularity %>
 			</p>
 			<% } %>
 			<div class="buttons">
@@ -34,7 +34,7 @@
 		<div class="vcenter" style="padding: 10px;">
 			<p class="description"><%= space.description %></p>
 
-			<% if (space.hiring_model === 'deposit') { %>
+			<% if (space.hiring_model === 'Deposit') { %>
 				<p><strong>Deposit required</strong>
 			<% } %>
 			<% if (space.facilities.length) { %>

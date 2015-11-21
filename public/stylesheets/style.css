@@ -209,6 +209,8 @@ Login screen
 .login input {
 	width: 80%;
 	margin-top: 0.2em;
+	border-radius: 5px;
+	padding: 1em;
 }
 
 .login label {
@@ -428,15 +430,15 @@ body[class^="_admin_"] {
     border-width: 3px;
     border-style: solid;
     -webkit-border-image:
-      -webkit-gradient(linear, 0 0, 0 100%, from(#931b26), to(rgba(0, 0, 0, 0))) 1 100%;
+      -webkit-gradient(linear, 0 0, 0 100%, from(#4b595e), to(rgba(0, 0, 0, 0))) 1 100%;
     -webkit-border-image:
-      -webkit-linear-gradient(#931b26, rgba(0, 0, 0, 0)) 1 100%;
+      -webkit-linear-gradient(#4b595e, rgba(0, 0, 0, 0)) 1 100%;
     -moz-border-image:
-      -moz-linear-gradient(#931b26, rgba(0, 0, 0, 0)) 1 100%;
+      -moz-linear-gradient(#4b595e, rgba(0, 0, 0, 0)) 1 100%;
     -o-border-image:
-      -o-linear-gradient(#931b26, rgba(0, 0, 0, 0)) 1 100%;
+      -o-linear-gradient(#4b595e, rgba(0, 0, 0, 0)) 1 100%;
     border-image:
-      linear-gradient(to bottom, #931b26, rgba(0, 0, 0, 0)) 1 100%;
+      linear-gradient(to bottom, #4b595e, rgba(0, 0, 0, 0)) 1 100%;
 	/* i dont want that left one */
 	border-left: 0px;
 }
@@ -539,4 +541,8 @@ ul.messages {
 	display: inline-block;
 	float: right;
 	cursor: pointer;
+}
+
+.form-item.form-facilities {
+	margin: 15px 0;		
 }

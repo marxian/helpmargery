@@ -36,19 +36,20 @@
 			$('#weeks .hour [data-num-day]').each(function() {
 				var $this = $(this);
 				var dayTing = parseInt($this.data('numDay'), 10);
-				var thisDay = firstDayDisplayed.clone().weekday(dayTing);
 				var thisHour = parseInt($this.parent().find('[data-date]').data('date'), 10);
+				var thisDay = firstDayDisplayed.clone().weekday(dayTing);
 				var thisDateTime = thisDay.clone().set({hour: thisHour, minute: 0, seconds: 0, milliseconds: 0});
 
-				_.forEach(space.bookings, function( booking ) {
-					var period = moment.range(moment(booking.start), moment(booking.end));
-
-					if (thisDateTime.within(period)) {
-						$this.html('<span role="button" class="booked"></span>');
-					} else {
-						$this.html('<a data-book-date="' + thisDateTime.toISOString() + '" title="' + thisDateTime.format('DD-MM-YYYY') + '" href="javascript:;" role="button" data-goto="book"></a>');
-					}
+				var dateTimeBooked = _.any(space.bookings, function( booking ) {
+					var period = moment.range(moment(booking.start), moment(booking.end).add(-1, 'second'));
+					return thisDateTime.within(period);
 				});
+
+				if (dateTimeBooked) {
+					$this.html('<span role="button" class="booked"></span>');
+				} else {
+					$this.html('<a data-book-date="' + thisDateTime.toISOString() + '" title="' + thisDateTime.format('DD-MM-YYYY') + '" href="javascript:;" role="button" data-goto="book"></a>');
+				}
 			});
 		}
 		function update() {

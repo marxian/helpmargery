@@ -59,7 +59,7 @@ router.post('/:id/book', function(req, res, next) {
 					next(err);
 				} else {
 					res.render('widget_success', {
-						title: 'stuff',
+						title: space.name,
 						space: space,
 						booking: booking
 					});
