@@ -1,13 +1,32 @@
 <% layout('widget_layout') -%>
-
+<style type="text/css">
+	#widget .vcenter .ticky-tick {
+		background-color: #34A853;
+		border-radius: 50%;
+		font-size: 8em;
+		color: white;
+		width: 200px;
+		height: 200px;
+		margin: 0 auto;
+	}
+</style>
 <div id="widget">
 
 	<div class="goto success">
 		<div class="top">
+			<button onclick="window.location.href='/edit/<%= space._id %>'">&lt;</button>
 			<h1>Booked</h1>
 		</div>
 		<div class="vcenter">
-			Thank you for your booking <%= space.name %>.
+			<br/>
+			<p>Thank you for your booking <%= space.name %> on
+			<br/>
+			<%= moment(booking.start).format('DD-MM-YYYY [at] HH:mm') %>
+			<br/>
+			to
+			<br/>
+			<%= moment(booking.end).format('DD-MM-YYYY [at] HH:mm') %>.</p>
+			<div class="ticky-tick">✓</div>
 		</div>
 	</div>
 
