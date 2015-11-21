@@ -296,9 +296,11 @@ Login screen
 
 .goto.book form {
 	display: flex;
+	flex-direction: column;
+	height: 100%;
 }
 .goto.book .buttons {
-
+	justify-content: end;
 }
 
 .widget-page .top {
