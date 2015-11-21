@@ -23,18 +23,18 @@
 					<textarea id="description" name="description"></textarea>
 				</div>
 
-				<div class="form-item">
-					<label for="facilities">Facilites</label>
-					<select id="facilities" data-placeholder="Select the facilities available" name="facilities" multiple="true">
+				<div class="form-item form-facilities">
+					<select id="facilities" data-placeholder="Select the facilities you have available" name="facilities" multiple="true">
 						<% facilities.forEach(function(f){ %>
 						<option value="<%= f %>"><%= f %></option>
 						<% }) %>
 					</select>
 				</div>
+
 				<!-- Sorry -->
 				<script>
 					$(document).ready(function() {
-						$('#facilities').chosen();
+						$('#facilities').chosen({width: "345px"});
 					});
 				</script>
 
@@ -90,8 +90,6 @@
 					</select>
 				</div>
 			</div>
-
-
 			<input type="hidden" name="owner[name]" value="<%= adminUsername %>" />
 			<input type="hidden" name="owner[email]" value="<%= adminUsername %>@everydayspaces.co.uk" />
 		</fieldset>
