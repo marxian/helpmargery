@@ -6,6 +6,7 @@ format.extend(String.prototype);
 
 router.use(function(req, res, next) {
 	res.locals.adminUsername = req.session.admin;
+	res.locals.page = req.url && req.url.replace(/\//g, '_');
 	next();
 });
 
@@ -20,7 +21,8 @@ router.get('/spaces', function(req, res, next) {
 		var spaces = docs;
 		res.render('spaces/index', {
 			title: 'All your spaces belong to us',
-			spaces: spaces
+			spaces: spaces,
+			facilities: models.Space.schema.path('facilities').options.enum
 		});
 	});
 });
