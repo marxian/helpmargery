@@ -98,6 +98,26 @@
 					</div>
 				</section>
 				<hr class="featurette-divider">
+
+<div class="row featurette"><h2>Some of our halls</h2>
+				<div id="owl-demo2" class="owl-carousel owl-theme">
+  <div class="item"><a href="http://www.standrewsgorleston.org.uk/about-us/our-church/the-chapter-house/" target="_blank"><img src="/img/gorleston.png" /></a></div>
+  <div class="item"><a href="http://www.dioceseofnorwich.org/church/deopham-st-andrew" target="_blank"><img src="/img/hall2.png" /></a></div>
+	  <div class="item"><a href="http://www.trowsechurch.co.uk/page/94/meeting-place" target="_blank"><img src="/img/trowse.png" /></a></div>
+		  <div class="item"><a href="http://needhamlink.blogspot.co.uk/" target="_blank"><img src="/img/needham.png" /></a></div>
+			<div class="item"><a href="http://www.anglicanchurch.org.uk/index.php?_cid=STANDREWKIRBYBED01" target="_blank"><img src="/img/kirby.png" /></a></div>
+			<div class="item"><A href="http://www.emmanuelaylsham.co.uk/address.html" target="_blank"><img src="/img/aylsham.png" /></a></div>
+</div>
+
+
+<div class="customNavigation">
+  <a class="btn prev">Previous</a>
+  <a class="btn next">Next</a>
+  <a class="btn play">Autoplay</a>
+  <a class="btn stop">Stop</a>
+</div>
+</div>
+<hr class="featurette-divider">
 				<section id="looker">
 					<div class="row featurette">
 						<div class="col-md-5">
@@ -155,6 +175,34 @@
 			// itemsMobile : false
 		});
 	});
+
+	$(document).ready(function() {
+
+  var owl = $("#owl-demo2");
+
+  owl.owlCarousel({
+      items : 4, //10 items above 1000px browser width
+      itemsDesktop : [1000,4], //5 items between 1000px and 901px
+      itemsDesktopSmall : [900,3], // betweem 900px and 601px
+      itemsTablet: [600,2], //2 items between 600 and 0
+      itemsMobile : false // itemsMobile disabled - inherit from itemsTablet option
+  });
+
+  // Custom Navigation Events
+  $(".next").click(function(){
+    owl.trigger('owl.next');
+  })
+  $(".prev").click(function(){
+    owl.trigger('owl.prev');
+  })
+  $(".play").click(function(){
+    owl.trigger('owl.play',1000); //owl.play event accept autoPlay speed as second parameter
+  })
+  $(".stop").click(function(){
+    owl.trigger('owl.stop');
+  })
+
+});
 	</script>
 	<!-- <script src="../../dist/js/bootstrap.min.js"></script> -->
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
