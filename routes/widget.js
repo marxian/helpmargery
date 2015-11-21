@@ -8,7 +8,7 @@ router.get('/sabot.js', function(req, res, next){
 	res.set('Content-Type', 'text/javascript');
 	var spaceId = req.query.id;
 	models.Space.findOne({_id: spaceId}, function(err, space) {
-		if (err) {
+		if (err || !space) {
 			res.send('');
 		} else {
 			res.render('sabot', {spaceId: spaceId});
